@@ -1,7 +1,8 @@
 .tabs {
+    border-bottom: 1px solid var(--color-grey);
+
     &-navbar {
         padding-top: getMinMax(24px, 40px);
-        padding-bottom: 5px;
     }
 
     &-content {
@@ -24,19 +25,19 @@
     }
 
     &-item {
-        flex: 1;
-        max-width: 240px;
+        min-width: 130px;
     }
 
     &-link {
         --color: #CBD5E1;
         @include tab();
+        padding: 0 getrem(24px);
 
         &-active,
         &:active,
         &:hover,
         &:focus {
-            --color: var(--color-orange);
+            --color: var(--color-green);
         }
     }
 
@@ -84,11 +85,7 @@
             max-width: 100%;
         }
 
-        &-link {
-            text-transform: capitalize;
-        }
-
-        & > .container {
+        &>.container {
             width: 100%;
         }
 

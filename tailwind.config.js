@@ -28,6 +28,9 @@ module.exports = {
         'grey': '#F0F0F4',
         'disabled': '#A5A5AA'
       },
+      gridTemplateColumns: {
+        'details': '1fr 434px',
+      }
     },
   },
   plugins: [],

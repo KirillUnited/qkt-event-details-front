@@ -1,0 +1,9 @@
+.author {
+    margin-bottom: getrem(24px);
+
+    &>*+* {
+        border-left: 1px solid var(--color-grey);
+        padding-left: getrem(16px);
+        margin-left: getrem(16px);
+    }
+}
