@@ -1,3 +1,4 @@
+{% from "./tag.njk" import tag %}
 <div class="card flex flex-col">
     <div class="card-content">
         <div class="card-heading flex flex-wrap gap-2 items-center">
@@ -8,12 +9,9 @@
             <div class="flex gap-5 items-center">
                 <i class="icon-Tag text-2xl text-black"></i>
                 <div class="flex flex-wrap gap-2">
-                    <div class="tag tag-primary">
-                        <span class="text-truncate">Free OPTIONS</span>
-                    </div>
-                    <div class="tag tag-primary">
-                        <span class="text-truncate">Family Friendly</span>
-                    </div>
+                    {{ tag(text="Free OPTIONS") }}
+                    {{ tag(type="primary", text="Family Friendly") }}
+                    {{ tag(type="secondary", text="SOLD OUT") }}
                 </div>
             </div>
             <div class="flex gap-5 items-center">
@@ -30,6 +28,7 @@
                     <a href="#" class="text-primary">View Map</a>
                 </div>
             </div>
+            <em>Tickets for this event may go back on sale. Click the button to never miss your opportunity again!</em>
         </div>
         <div class="card-footer">
             <button class="btn btn-primary card-cta" type="button">

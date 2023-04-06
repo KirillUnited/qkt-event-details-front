@@ -1,0 +1,6 @@
+{% macro tag(type="", text="") %}
+    {% set className = "tag-"+type %}
+    <div class="tag {{ className if type }}">
+        <span class="text-truncate">{{ text }}</span>
+    </div>
+{% endmacro %}
