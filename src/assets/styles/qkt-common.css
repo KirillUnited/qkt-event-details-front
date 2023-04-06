@@ -2,6 +2,8 @@
 
 html {
     color: var(--color-text-body);
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
 }
 
 @tailwind components;

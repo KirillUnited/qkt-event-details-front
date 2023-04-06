@@ -19,12 +19,12 @@
                     </section>
                     <section class="section">
                         <div class="container max-w-7xl">
-                            <div class="grid grid-cols-details gap-10">
+                            <div class="md:grid grid-cols-details gap-10">
                                 <div class="content-wrap">
                                     <div class="flex flex-col content-heading">
-                                        <h1 class="text-heading text-3xl font-bold capitalize pb-4 pt-16 flex items-center justify-between">
+                                        <h1 class="text-heading font-bold capitalize flex items-center justify-between">
                                             {{ title }}
-                                            <div class="socials flex gap-7">
+                                            <div class="socials hidden sm:flex gap-7">
                                                 <a href="#" class="icon-Share text-lg"></a>
                                                 <a href="#" class="icon-Heart text-lg"></a>
                                             </div>
@@ -41,7 +41,7 @@
                                             <a href="#" class="icon-twitter text-sm"></a>
                                         </div>
                                     </div>
-                                    <div class="content-inner pt-16 pb-4">                                    
+                                    <div class="content-inner pt-4 pb-4">                                    
                                         {{ content | safe }}
                                     </div>
                                 </div>

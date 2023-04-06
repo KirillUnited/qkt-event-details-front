@@ -1,0 +1,38 @@
+.content {
+    &-heading {
+        .text-heading {
+            font-size: getMinMax(24px, 32px);
+            padding-top: calc(64/32)*1em;
+            padding-bottom: calc(16/32)*1em;
+        }
+    }
+
+    &-inner {
+        .text-heading {
+            font-size: getMinMax(20px, 24px);
+            padding-top: calc(32/24)*1em;
+            padding-bottom: calc(24/24)*1em;
+            margin-bottom: calc(40/24)*1em;
+        }
+
+        p {
+            font-size: getMinMax(12px, 16px);
+            margin-top: calc(32/16)*1em;
+            margin-bottom: calc(32/16)*1em;
+        }
+
+        ol,
+        ul {
+            padding-left: getMinMax(16px, 16px);
+
+            &>li {
+                font-size: getMinMax(12px, 16px);
+                margin-bottom: calc(32/16)*1em;
+            }
+        }
+
+        ol {
+            list-style: decimal;
+        }
+    }
+}

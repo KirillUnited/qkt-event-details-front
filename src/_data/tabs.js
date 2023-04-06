@@ -1,6 +1,6 @@
 module.exports = {
-    "ABOUT": "#",
-    "DIRECTIONS": "#",
-    "Terms & Conditions": "#",
-    "DISCLAIMER": "#"
+    "ABOUT": "#About",
+    "DIRECTIONS": "#Directions",
+    "Terms & Conditions": "#Terms&Conditions",
+    "DISCLAIMER": "#Disclaimer"
 };
