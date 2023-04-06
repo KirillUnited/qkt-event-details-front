@@ -1,0 +1,31 @@
+.card {
+    --border-color: #E7E7EE;
+    background-color: var(--color-grey);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: getrem(24px);
+
+    &-content {
+        &>*+* {
+            border-top: 1px solid var(--border-color);
+        }
+    }
+
+    &-heading {
+        padding-bottom: 24px;
+    }
+
+    &-body {
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+
+    &-footer {
+        padding-top: 24px;
+        padding-bottom: 10px;
+    }
+
+    &-cta {
+        width: 100%;
+    }
+}

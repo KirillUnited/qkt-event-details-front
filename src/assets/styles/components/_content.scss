@@ -2,8 +2,7 @@
     &-heading {
         .text-heading {
             font-size: getMinMax(24px, 32px);
-            padding-top: calc(64/32)*1em;
-            padding-bottom: calc(16/32)*1em;
+            margin-bottom: calc(16/32)*1em;
         }
     }
 
