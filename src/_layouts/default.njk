@@ -7,11 +7,11 @@
     <body class="{{ body_class }} font-heebo">
         <div class="wrapper">
             {% block header %}
-                {% include "../_includes/header.njk" %}
+                {% include "../_includes/components/header.njk" %}
             {% endblock %}
             <main class="content">
                 {% block content %}
-                    {% include "../_includes/banner.njk" %}
+                    {% include "../_includes/components/banner.njk" %}
                     <section class="section tabs">
                         <div class="container max-w-7xl">
                             {% include "../_includes/components/tabs.njk" %}

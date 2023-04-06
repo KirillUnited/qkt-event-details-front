@@ -14,11 +14,11 @@
                 <ul class="header-navbar flex items-center text-sm gap-5 md:gap-7">
                     {% set item = header %}
                     {% set has_dropdown = true %}
-                    {%include "./components/header-dropdown.njk" %}
+                    {%include "./header-dropdown.njk" %}
                     <li>
                         <a href="#" class="cart flex gap-5">
                             <span class="hidden md:block">CART</span>
-                            {% include "./icons/cart.njk" %}
+                            {% include "../icons/cart.njk" %}
                             <span class="flex items-center justify-center cart-count text-white bg-primary">0</span>
                         </a>
                     </li>
