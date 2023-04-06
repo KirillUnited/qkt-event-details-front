@@ -1,4 +1,5 @@
 {% from "./tag.njk" import tag %}
+{% from "./button.njk" import button %}
 <div class="card flex flex-col">
     <div class="card-content">
         <div class="card-heading flex flex-wrap gap-2 items-center">
@@ -31,9 +32,7 @@
             <em>Tickets for this event may go back on sale. Click the button to never miss your opportunity again!</em>
         </div>
         <div class="card-footer">
-            <button class="btn btn-primary card-cta" type="button">
-                BUY TICKETS
-            </button>
+            {{ button(type="button", className="btn-primary card-cta", text="BUY TICKETS") }}
         </div>
     </div>
 </div>

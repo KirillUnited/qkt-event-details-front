@@ -1,0 +1,5 @@
+{% macro button(type="",className="", text="", attrs="") %}
+    <button class="btn {{ className }}" type="{{ type }}" {{ attrs }}>
+        {{ text }}
+    </button>
+{% endmacro %}
