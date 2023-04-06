@@ -20,11 +20,6 @@
     }
 
     &-navbar {
-        &>*+* {
-            border-left: 1px solid var(--color-grey);
-            padding-left: getrem(28px);
-        }
-
         &-list {
             display: flex;
             align-items: center;
@@ -120,6 +115,15 @@
         padding-right: calc(24px/$fontSize)*1em;
     }
 
+    @include more-sm() {
+        &-navbar {
+            &>*+* {
+                border-left: 1px solid var(--color-grey);
+                padding-left: getrem(28px);
+            }
+        }
+    }
+
     @include less-sm() {
         border: none;
 
@@ -133,6 +137,10 @@
         .logo {
             Width: getMinMax(134px, 134px);
             Height: getMinMax(38px, 38px);
+        }
+
+        &-dropdown {
+            display: none;
         }
     }
 }
