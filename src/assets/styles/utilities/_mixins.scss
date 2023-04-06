@@ -1,0 +1,302 @@
+@mixin less-md($max: map-get($grid-breakpoints, "md")) {
+    @media (max-width: $max) {
+        @content;
+    }
+}
+
+@mixin more-sm($max: map-get($grid-breakpoints, "sm")) {
+    @media (min-width: ($max + 1px)) {
+        @content;
+    }
+}
+
+@mixin less-sm($max: map-get($grid-breakpoints, "sm")) {
+    @media (max-width: $max) {
+        @content;
+    }
+}
+
+@mixin more-xs($max: map-get($grid-breakpoints, "xs")) {
+    @media (min-width: ($max + 1px)) {
+        @content;
+    }
+}
+
+@mixin less-xs($max: map-get($grid-breakpoints, "xs")) {
+    @media (max-width: $max) {
+        @content;
+    }
+}
+
+@mixin input-field($font-size: $base) {
+    --font-size: 16;
+    --color: var(--color-text-body);
+    --bg-color: #FFFFFF;
+    --border-radius: #{calc(8px/$font-size)*1em};
+    --border-color: #C2C9D1;
+    --min-height: 48px;
+
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-height: var(--min-height);
+    color: var(--color);
+    font-family: var(--font-main), sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: inherit;
+    line-height: calc(20px/$font-size)*1em;
+    padding: calc(9px / $font-size) * 1em calc(12px / $font-size) * 1em;
+    background-color: var(--bg-color);
+    transition: all 180ms ease-in-out;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    appearance: none;
+
+    &:focus {
+        outline: 0;
+        outline-offset: 0;
+    }
+}
+
+// placeholders
+@mixin input-placeholder {
+    &.placeholder {
+        @content;
+    }
+
+    &:-moz-placeholder {
+        @content;
+    }
+
+    &::-moz-placeholder {
+        @content;
+    }
+
+    &:-ms-input-placeholder {
+        @content;
+    }
+
+    &::-webkit-input-placeholder {
+        @content;
+    }
+}
+
+@mixin input-radio($font-size: 16) {
+    position: relative;
+    width: calc(calc(var(--size, 20) / $font-size) * 1em);
+    height: calc(calc(var(--size, 20) / $font-size) * 1em);
+    border: 1px solid var(--border-color, currentColor);
+    border-radius: 50%;
+    margin: 0;
+    outline: none;
+    appearance: none;
+
+    &:after {
+        content: '';
+        display: block;
+        left: 50%;
+        top: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        width: calc(calc(12 / $font-size) * 1em);
+        height: calc(calc(12 / $font-size) * 1em);
+        border-radius: 50%;
+        background-color: var(--bg-color);
+    }
+
+    &:checked {
+        --border-color: var(--border-color-active);
+        --bg-color: var(--bg-color-active, currentColor);
+    }
+}
+
+// truncate text tags like "span" "p" and etc.
+// example: @include truncate(110px);
+@mixin truncate($truncation-boundary: 100%) {
+    max-width: $truncation-boundary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+// Aspect Ratio Mixin
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+
+    &:before {
+        display: block;
+        content: "";
+        width: 100%;
+        padding-top: ($height / $width) * 100%;
+    }
+
+    > .content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+@mixin get-aspect-ratio() {
+    --aspect-ratio: calc(var(--height) / var(--width));
+    position: relative;
+    height: 0;
+    padding-bottom: calc(var(--aspect-ratio, .5625) * 100%);
+}
+
+// /* mixin for multiline */
+@mixin multiLineEllipsis($lineHeight: 1.2em, $lineCount: 1, $bgColor: white) {
+    overflow: hidden;
+    position: relative;
+    line-height: $lineHeight;
+    max-height: $lineHeight * $lineCount;
+    text-align: justify;
+    margin-right: -1em;
+    padding-right: 1em;
+
+    &:before {
+        content: '...';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 1em;
+        height: 1em;
+        margin-top: 0.2em;
+        background: $bgColor;
+    }
+}
+
+// example:
+// .block-with-text {
+//     @include multiLineEllipsis($lineHeight: 1.2em, $lineCount: 3, $bgColor: white);
+// }
+
+// line clamp
+@mixin line-clamp($line) {
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+@mixin o-fit-absolute() {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+@mixin btn-style-reset {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    border: none;
+    appearance: none;
+}
+
+@mixin button($fontSize: 16px, $height: auto) {
+    --min-width: 11ch;
+    --transition: 180ms ease-in-out;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: var(--min-width);
+    min-height: $height;
+    padding: 0.25em 1em;
+    background-color: var(--bg-color, transparent);
+    color: var(--color, var(--color-text-body));
+    font-size: $fontSize;
+    font-weight: var(--font-weight, 700);
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: 1px;
+    line-height: 1.1;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    appearance: none;
+    border-color: transparent;
+    transition: var(--transition);
+    transition-property: color, background, border;
+
+    @media screen and (-ms-high-contrast: active) {
+        border: 2px solid currentColor;
+    }
+
+    &:focus {
+        outline-color: transparent;
+        outline-style: solid;
+    }
+
+    &-icon {
+        width: 1.5em;
+        height: 1.5em;
+
+        // stylelint-disable-next-line  selector-max-type
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        svg,
+        path {
+            fill: var(--color, currentColor);
+            transition: var(--transition);
+        }
+    }
+}
+
+@mixin tab($font-size: 14px) {
+    min-height: calc(37px/$font-size)*1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color);
+    font-family: var(--font-main);
+    font-weight: 500;
+    font-size: getMinMax(14px, $font-size);
+    line-height: 1;
+    letter-spacing: 0.0125em;
+    text-transform: uppercase;
+    padding: calc(8px/$font-size)*1em;
+    border-bottom: 2px solid var(--color);
+    transition: all 180ms ease-in-out;
+}
+
+@mixin tag($fontSize: 21px) {
+    font-family: var(--font-main);
+    font-weight: 500;
+    font-size: getMinMax($fontSize, $fontSize);
+    color: var(--color);
+    background-color: var(--bg-color);
+    display: inline-flex;
+    align-items: center;
+    letter-spacing: 0.0125em;
+    text-transform: uppercase;
+
+    &-icon {
+        width: 1.5em;
+        height: 1.5em;
+
+        // stylelint-disable-next-line  selector-max-type
+        svg {
+            width: 100%;
+            height: 100%;
+            fill: currentColor;
+        }
+    }
+}

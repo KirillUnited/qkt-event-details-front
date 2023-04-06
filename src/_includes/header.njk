@@ -1,0 +1,25 @@
+<header class="header">
+    <div class="container">
+        <div class="flex items-center justify-between gap-1 py-4">
+            <div class="flex items-center gap-10 basis-1/2">
+                <a href="/" class="back">
+                    <img src="/assets/images/icons/logo.svg" class="logo" width="169" height="48" alt="Quicket"/>
+                </a>
+                <div class="form-input flex-1">
+                    <input type="search" class="form-input-field">
+                    <img class="form-input-icon icon-search" src="/assets/images/icons/Search.svg"/>
+                </div>
+            </div>
+            <nav class="">
+                <ul class="flex items-center">
+                    <li>JENNA.VENTER@gmail.com</li>
+                    <li class="text-body">
+                        <span>CART</span>
+                        {% include "./icons/cart.njk" %}
+                        <span>0</span>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>

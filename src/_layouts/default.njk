@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% include "../_includes/head.njk" %}
+        {% block head %}{% endblock %}
+    </head>
+    <body class="{{ body_class }}">
+        <div class="wrapper">
+            {% block header %}
+                {% include "../_includes/header.njk" %}
+            {% endblock %}
+            <main class="content">
+                {% block content %}
+                    <section class="section">
+                        <div class="container">
+                            {{ content | safe }}
+                        </div>
+                    </section>
+                {% endblock %}
+            </main>
+            {% block footer %}{% endblock %}
+        </div>
+        {% block scripts %}
+            {% include "../_includes/scripts.njk" %}
+        {% endblock %}
+    </body>
+</html>
