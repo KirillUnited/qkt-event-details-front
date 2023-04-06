@@ -9,9 +9,9 @@ module.exports = {
     screens: {
       'xs': '576px',
       'sm': '767px',
-      'md': '1024px',
+      'md': '991px',
       'lg': '1140px',
-      'xl': '1440px',
+      'xl': '1376px',
     },
     fontFamily: {
       heebo: ['Heebo', 'sans-serif'],
@@ -24,8 +24,8 @@ module.exports = {
         'heading': '#33414F',
         'body': '#485868',
         'lightGreen': 'rgba(180, 213, 146, 0.2)',
-        'grey':'#F0F0F4',
-        'disabled':'#A5A5AA'
+        'grey': '#F0F0F4',
+        'disabled': '#A5A5AA'
       },
     },
   },

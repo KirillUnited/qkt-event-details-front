@@ -1,0 +1,8 @@
+.cart {
+    &-count {
+        width: getrem(20px);
+        height: getrem(20px);
+        font-size: getrem(9px);
+        border-radius: 100%;
+    }
+}

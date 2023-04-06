@@ -1,3 +1,8 @@
 @tailwind base;
+
+html {
+    color: var(--color-text-body);
+}
+
 @tailwind components;
 @tailwind utilities;
