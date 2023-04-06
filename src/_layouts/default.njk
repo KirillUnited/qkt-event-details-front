@@ -11,6 +11,7 @@
             {% endblock %}
             <main class="content">
                 {% block content %}
+                    {% include "../_includes/banner.njk" %}
                     <section class="section">
                         <div class="container">
                             {{ content | safe }}

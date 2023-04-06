@@ -1,0 +1,14 @@
+.banner {
+    --height: 480;
+    --width: 1440;
+    @include get-aspect-ratio();
+}
+
+.has-img-fit {
+    position: relative;
+
+    &>img,
+    &>.img-bg {
+        @include o-fit-absolute();
+    }
+}

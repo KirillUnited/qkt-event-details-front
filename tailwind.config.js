@@ -12,6 +12,7 @@ module.exports = {
       'md': '991px',
       'lg': '1140px',
       'xl': '1376px',
+      '2xl': '1440px'
     },
     fontFamily: {
       heebo: ['Heebo', 'sans-serif'],
