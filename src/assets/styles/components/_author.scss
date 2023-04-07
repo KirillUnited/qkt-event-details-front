@@ -1,5 +1,5 @@
 .author {
-    margin-bottom: getrem(24px);
+    margin-bottom: getMinMax(12px, 24px);
 
     &>*+* {
         border-left: 1px solid var(--color-grey);

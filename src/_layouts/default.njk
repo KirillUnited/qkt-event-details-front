@@ -1,5 +1,6 @@
 {% from "../_includes/components/socials.njk" import share %}
 {% from "../_includes/components/socials.njk" import network %}
+{% from "../_includes/components//tag.njk" import tag %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -15,15 +16,20 @@
                 {% block content %}
                     {% include "../_includes/components/banner.njk" %}
                     <section class="section tabs">
-                        <div class="container xl:max-w-7xl">
+                        <div class="container hidden md:block xl:max-w-7xl">
                             {% include "../_includes/components/tabs.njk" %}
                         </div>
                     </section>
                     <section class="section">
                         <div class="container xl:max-w-7xl">
-                            <div class="md:grid grid-cols-details gap-10 pt-16 pb-8">
+                            <div class="md:grid grid-cols-details gap-10 pt-6 md:pt-16 pb-8">
                                 <div class="content-wrap">
                                     <div class="flex flex-col content-heading">
+                                        <div class="flex flex-wrap gap-2 mb-2 md:hidden">
+                                            {{ tag(text="Free OPTIONS") }}
+                                            {{ tag(type="primary", text="Family Friendly") }}
+                                            {{ tag(type="secondary", text="SOLD OUT") }}
+                                        </div>
                                         <h1 class="text-heading font-bold capitalize flex items-center justify-between">
                                             {{ title }}
                                             {{ share(className="hidden md:flex") }}
@@ -35,6 +41,19 @@
                                             <a href="{{ link }}">{{ link }}</a>
                                         </div>
                                         {{ network() }}
+                                        <div class="flex flex-col gap-2 mt-5 md:hidden">
+                                            <div class="flex gap-3 items-center">
+                                                <i class="icon-Calendar text-xl text-black"></i>
+                                                <p class="text-sm">Mon Apr 24, 09:00 - Sun Apr 30, 19:00</p>
+                                            </div>
+                                            <div class="flex gap-3 items-center">
+                                                <i class="icon-map-pin text-xl text-black"></i>
+                                                <p class="text-sm">Tankwa Town</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="md:hidden">
+                                        {% include "../_includes/components/tabs.njk" %}
                                     </div>
                                     <div class="content-inner pt-4 pb-4">
                                         {{ content | safe }}
