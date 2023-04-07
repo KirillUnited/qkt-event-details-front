@@ -1,5 +1,5 @@
 {% from "../_includes/components/socials.njk" import share %}
-
+{% from "../_includes/components/socials.njk" import network %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -34,11 +34,7 @@
                                             </a>
                                             <a href="{{ link }}">{{ link }}</a>
                                         </div>
-                                        <div class="socials flex flex-wrap gap-7">
-                                            <a href="#" class="icon-linkedin text-sm"></a>
-                                            <a href="#" class="icon-tiktok text-sm"></a>
-                                            <a href="#" class="icon-twitter text-sm"></a>
-                                        </div>
+                                        {{ network() }}
                                     </div>
                                     <div class="content-inner pt-4 pb-4">
                                         {{ content | safe }}
