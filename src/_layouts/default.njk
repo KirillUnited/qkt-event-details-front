@@ -41,13 +41,20 @@
                                             <a href="#" class="icon-twitter text-sm"></a>
                                         </div>
                                     </div>
-                                    <div class="content-inner pt-4 pb-4">                                    
+                                    <div class="content-inner pt-4 pb-4">
                                         {{ content | safe }}
                                     </div>
                                 </div>
                                 <aside>
-                                    <div class="sticky">
+                                    <div class="sticky top-0">
                                         {% include "../_includes/components/card.njk" %}
+                                        <div class="payments flex flex-col items-center gap-6 mt-9">
+                                            <p class="flex items-center gap-2 text-disabled text-sm">
+                                                <i class="icon-Lock"></i>
+                                                <span>Payments are secure and encrypted</span>
+                                            </p>
+                                            <img src="/assets/images/payment-options.png" width="360" height="26" alt="Payments are secure and encrypted">
+                                        </div>
                                     </div>
                                 </aside>
                             </div>
