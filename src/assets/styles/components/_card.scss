@@ -1,6 +1,7 @@
 .card {
     --border-color: #E7E7EE;
-    background-color: var(--color-grey);
+    --bg-color: var(--color-grey);
+    background-color: var(--bg-color);
     border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: getrem(24px);
@@ -27,5 +28,28 @@
 
     &-cta {
         width: 100%;
+    }
+
+    .socials {
+        display: none;
+    }
+}
+
+@include less-md() {
+    .card {
+        --bg-color: #fff;
+        border-radius: 0;
+
+        &-body {
+            display: none;
+        }
+
+        &-footer {
+            padding: 0;
+        }
+
+        .socials {
+            display: flex;
+        }
     }
 }
