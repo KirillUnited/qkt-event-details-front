@@ -13,18 +13,18 @@
                 {% block content %}
                     {% include "../_includes/components/banner.njk" %}
                     <section class="section tabs">
-                        <div class="container max-w-7xl">
+                        <div class="container xl:max-w-7xl">
                             {% include "../_includes/components/tabs.njk" %}
                         </div>
                     </section>
                     <section class="section">
-                        <div class="container max-w-7xl">
+                        <div class="container xl:max-w-7xl">
                             <div class="md:grid grid-cols-details gap-10 pt-16 pb-16">
                                 <div class="content-wrap">
                                     <div class="flex flex-col content-heading">
                                         <h1 class="text-heading font-bold capitalize flex items-center justify-between">
                                             {{ title }}
-                                            <div class="socials hidden sm:flex gap-7">
+                                            <div class="socials hidden md:flex gap-7">
                                                 <a href="#" class="icon-Share text-lg"></a>
                                                 <a href="#" class="icon-Heart text-lg"></a>
                                             </div>
