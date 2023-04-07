@@ -1,12 +1,10 @@
 {% from "./tag.njk" import tag %}
 {% from "./button.njk" import button %}
+{% from "./socials.njk" import share %}
 <div class="card flex flex-col">
     <div class="card-content">
-        <div class="card-heading flex flex-wrap items-center justify-between">
-            <div class="socials flex gap-7">
-                <a href="#" class="icon-Share text-lg"></a>
-                <a href="#" class="icon-Heart text-lg"></a>
-            </div>
+        <div class="card-heading flex flex-wrap items-center justify-between gap-2">
+            {{ share() }}
             <div class="flex flex-wrap gap-2 items-center">
                 <span class="text-disabled">From</span>
                 <span class="text-primary text-3xl font-bold">R150 - R2000</span>
