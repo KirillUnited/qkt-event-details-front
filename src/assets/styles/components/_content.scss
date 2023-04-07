@@ -9,9 +9,9 @@
     &-inner {
         .text-heading {
             font-size: getMinMax(20px, 24px);
-            padding-top: calc(32/24)*1em;
-            padding-bottom: calc(24/24)*1em;
-            margin-bottom: calc(40/24)*1em;
+            padding-top: getMinMax(16px, 32px);
+            padding-bottom: getMinMax(16px, 24px);
+            margin-bottom: getMinMax(16px, 40px);
             border-bottom: 1px solid #E7E7EE;
         }
 
