@@ -39,6 +39,12 @@
     .card {
         --bg-color: #fff;
         border-radius: 0;
+        padding-top: getrem(16px);
+        padding-bottom: getrem(16px);
+
+        &-heading {
+            padding-bottom: getrem(16px);
+        }
 
         &-body {
             display: none;
