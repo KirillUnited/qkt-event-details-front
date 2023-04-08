@@ -4,8 +4,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        {% include "../_includes/head.njk" %}
-        {% block head %}{% endblock %}
+        {% block head %}
+            {% include "../_includes/head.njk" %}
+        {% endblock %}
     </head>
     <body class="{{ body_class }} font-heebo">
         <div class="wrapper">
@@ -15,8 +16,8 @@
             <main class="content">
                 {% block content %}
                     {% include "../_includes/components/banner.njk" %}
-                    <section class="section tabs">
-                        <div class="container hidden md:block xl:max-w-7xl">
+                    <section class="section tabs hidden md:block">
+                        <div class="container xl:max-w-7xl">
                             {% include "../_includes/components/tabs.njk" %}
                         </div>
                     </section>
@@ -24,13 +25,13 @@
                         <div class="container xl:max-w-7xl">
                             <div class="md:grid grid-cols-details gap-10 pt-6 md:pt-16 pb-8">
                                 <div class="content-wrap">
-                                    <div class="flex flex-col content-heading">
+                                    <div class="flex flex-col content-heading ">
                                         <div class="flex flex-wrap gap-2 mb-2 md:hidden">
                                             {{ tag(text="Free OPTIONS") }}
                                             {{ tag(type="primary", text="Family Friendly") }}
                                             {{ tag(type="secondary", text="SOLD OUT") }}
                                         </div>
-                                        <h1 class="text-heading font-bold capitalize flex items-center justify-between">
+                                        <h1 id="About" class="text-heading font-bold capitalize flex items-center justify-between">
                                             {{ title }}
                                             {{ share(className="hidden md:flex") }}
                                         </h1>
@@ -41,7 +42,7 @@
                                             <a href="{{ link }}">{{ link }}</a>
                                         </div>
                                         {{ network() }}
-                                        <div class="flex flex-col gap-2 mt-5 md:hidden">
+                                        <div class="flex flex-col gap-2 mt-6 mb-6 md:hidden">
                                             <div class="flex gap-3 items-center">
                                                 <i class="icon-Calendar text-xl text-black"></i>
                                                 <p class="text-sm">Mon Apr 24, 09:00 - Sun Apr 30, 19:00</p>
@@ -60,7 +61,7 @@
                                     </div>
                                 </div>
                                 <aside class="sidebar hidden md:block">
-                                    <div class="sticky top-16">
+                                    <div class="sticky top-48">
                                         {% include "../_includes/components/card.njk" %}
                                         <div class="payments flex flex-col items-center gap-6 mt-9">
                                             <p class="flex items-center gap-2 text-disabled text-sm">

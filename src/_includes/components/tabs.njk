@@ -3,7 +3,7 @@
         {%- for tab, link in tabs -%}
             <li class="tabs-item">
                 <a href="{{ link }}" class="tabs-link {{ 'tabs-link-active' if loop.index === 1 }}" data-tab="{{ tab }}">
-                    <span class="text-truncate">{{ tab }}</span>
+                    <span>{{ tab }}</span>
                 </a>
             </li>
         {%- endfor -%}

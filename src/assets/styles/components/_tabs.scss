@@ -1,8 +1,11 @@
 .tabs {
+    position: sticky;
+    top: 80px;
+    background-color: #fff;
     border-bottom: 2px solid var(--color-grey);
 
     &-navbar {
-        padding-top: getMinMax(24px, 40px);
+        padding-top: getMinMax(20px, 20px);
         margin-bottom: -2px;
     }
 
@@ -30,13 +33,14 @@
     }
 }
 
-@include less-xs() {
+@include less-sm() {
     .tabs {
         overflow: visible;
 
         &-navbar {
             margin-left: -16px;
             margin-right: -16px;
+            padding-top: 0;
         }
 
         &-list {
