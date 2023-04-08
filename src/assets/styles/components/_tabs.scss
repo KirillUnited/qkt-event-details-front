@@ -3,6 +3,7 @@
     top: 80px;
     background-color: #fff;
     border-bottom: 2px solid var(--color-grey);
+    z-index: 10;
 
     &-navbar {
         padding-top: getMinMax(20px, 20px);
@@ -35,12 +36,13 @@
 
 @include less-sm() {
     .tabs {
+        top: 70px;
         overflow: visible;
 
         &-navbar {
             margin-left: -16px;
             margin-right: -16px;
-            padding-top: 0;
+            padding-top: 10px;
         }
 
         &-list {
