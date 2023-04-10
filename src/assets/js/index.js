@@ -1,6 +1,7 @@
 (function () {
     const header = document.getElementById("header");
     const tabsContainer = document.querySelectorAll(".tabs");
+    const tabsPanel = document.querySelectorAll('[data-panel]');
     const handleTabs = (element) => {
         const tabslist = element.querySelector(".tabs-list");
         const tabs = tabslist.querySelectorAll(".tabs-link");
@@ -23,10 +24,34 @@
     document.addEventListener("scroll", onScroll);
 
     function switchTab(oldTab, newTab) {
-        newTab.focus();
+        if(!oldTab && !newTab) return;
+
         newTab.classList.add('tabs-link-active');
         oldTab.classList.remove('tabs-link-active');
     }
 
-    function onScroll(e) { }
+    function onScroll(e) {
+        const tabsContainer = document.querySelector(".tabs");
+        const tabslist = tabsContainer.querySelector(".tabs-list");
+        const tabs = tabslist.querySelectorAll(".tabs-link");
+        let current = null;
+
+        tabsPanel.forEach((section) => {
+            const sectionTop = section.offsetTop;
+
+            if (scrollY >= sectionTop - 300) {
+                current = section.getAttribute("id");
+            }
+        });
+
+        tabs.forEach((tab) => {
+            const newTab = tabslist.querySelector(`[href="#${current}"]`);
+
+            tab.classList.remove('tabs-link-active');
+
+            if(newTab){
+                newTab.classList.add('tabs-link-active');
+            }
+        });
+    }
 })();
