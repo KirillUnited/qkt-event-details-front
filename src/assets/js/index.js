@@ -1,28 +1,38 @@
 (function () {
     const header = document.getElementById("header");
-    const tabsContainer = document.querySelector(".tabs");
-    const tabslist = tabsContainer.querySelector(".tabs-list");
-    const tabs = tabslist.querySelectorAll(".tabs-link");
+    const tabsContainer = document.querySelectorAll(".tabs");
+    const tabsPanel = document.querySelectorAll('[data-panel]');
+    const handleTabs = (element) => {
+        const tabslist = element.querySelector(".tabs-list");
+        const tabs = tabslist.querySelectorAll(".tabs-link");
+        let current = null;
+
+        tabsPanel.forEach((section) => {
+            const sectionTop = section.offsetTop;
+
+            if (scrollY >= sectionTop - 300) {
+                current = section.getAttribute("id");
+            }
+        });
+
+        tabs.forEach((tab) => {
+            const newTab = tabslist.querySelector(`[href="#${current}"]`);
+
+            switchTab(tab, newTab);
+        });
+    };
 
     document.addEventListener("scroll", onScroll);
 
-    tabs.forEach((tab) => {
-        tab.addEventListener("click", onTabClick);
-    });
-
-    function onTabClick(e) {
-        const currentTab = tabslist.querySelector('.tabs-link-active');
-
-        if (e.currentTarget !== currentTab) {
-            switchTab(currentTab, e.currentTarget);
-        }
+    function onScroll(e) {
+        tabsContainer.forEach((element) => handleTabs(element));
     }
 
     function switchTab(oldTab, newTab) {
-        newTab.focus();
-        newTab.classList.add('tabs-link-active');
         oldTab.classList.remove('tabs-link-active');
-    }
 
-    function onScroll(e) { }
+        if (newTab) {
+            newTab.classList.add('tabs-link-active');
+        }
+    }
 })();
