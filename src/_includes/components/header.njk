@@ -7,28 +7,32 @@
                 </a>
                 <div class="form-input flex-1 hidden md:block">
                     <input type="search" class="form-input-field">
-                    <i class="form-input-icon icon-search"></i>
+                        <i class="form-input-icon icon-search"></i>
+                    </div>
                 </div>
+                <nav class="">
+                    <h1 class="header-title font-bold capitalize flex items-center justify-between gap-7">
+                        {{ title }}
+                        {{ share(className="hidden md:flex") }}
+                    </h1>
+                    <ul class="header-navbar flex items-center text-sm gap-5 md:gap-7">
+                        {% set item = header %}
+                        {% set has_dropdown = true %}
+                        {% include "./header-dropdown.njk" %}
+                        <li>
+                            <a href="#" class="cart flex gap-5">
+                                <span class="hidden md:block">CART</span>
+                                {% include "../icons/cart.njk" %}
+                                <span class="flex items-center justify-center cart-count text-white bg-primary">0</span>
+                            </a>
+                        </li>
+                        <li class="sm:hidden">
+                            <button type="button" class="flex text-2xl">
+                                <i class="icon-menu"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-            <nav class="">
-                <ul class="header-navbar flex items-center text-sm gap-5 md:gap-7">
-                    {% set item = header %}
-                    {% set has_dropdown = true %}
-                    {%include "./header-dropdown.njk" %}
-                    <li>
-                        <a href="#" class="cart flex gap-5">
-                            <span class="hidden md:block">CART</span>
-                            {% include "../icons/cart.njk" %}
-                            <span class="flex items-center justify-center cart-count text-white bg-primary">0</span>
-                        </a>
-                    </li>
-                    <li class="sm:hidden">
-                        <button type="button" class="flex text-2xl">
-                            <i class="icon-menu"></i>
-                        </button>
-                    </li>
-                </ul>
-            </nav>
         </div>
-    </div>
-</header>
+    </header>
