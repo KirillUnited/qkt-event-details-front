@@ -1,4 +1,5 @@
 // Header, Tabs
+import "../styles/qkt-events.scss";
 (function () {
     const header = document.getElementById("header");
     const tabsContainer = document.querySelectorAll(".tabs");
