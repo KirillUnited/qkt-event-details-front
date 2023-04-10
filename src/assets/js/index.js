@@ -21,11 +21,22 @@
             switchTab(tab, newTab);
         });
     };
+    const handleHeader = () => {
+        const contentHeading = document.querySelector(".content-heading");
+        const headerNavbar = header.querySelector(".header-navbar");
+
+        if (scrollY >= contentHeading.offsetTop - 120) {
+            header.classList.add("isScroll");
+        } else {
+            header.classList.remove("isScroll");
+        }
+    };
 
     document.addEventListener("scroll", onScroll);
 
     function onScroll(e) {
         tabsContainer.forEach((element) => handleTabs(element));
+        handleHeader();
     }
 
     function switchTab(oldTab, newTab) {
