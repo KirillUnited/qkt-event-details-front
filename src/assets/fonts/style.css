@@ -36,7 +36,6 @@
 }
 .icon-Heart:before {
   content: "\e901";
-  color: #a5a5aa;
 }
 .icon-Heart-filled:before {
   content: "\e902";
@@ -55,7 +54,6 @@
 }
 .icon-Share:before {
   content: "\e906";
-  color: #a5a5aa;
 }
 .icon-shopping-cart:before {
   content: "\e907";

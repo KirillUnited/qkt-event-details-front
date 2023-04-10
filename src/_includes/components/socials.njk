@@ -1,7 +1,21 @@
 {% macro share(className="") %}
     <div class="socials flex gap-7 {{ className }}">
-        <a href="#" class="icon-Share text-lg"></a>
-        <a href="#" class="icon-Heart text-lg"></a>
+        <div class="dropdown">
+            <a href="#" class="icon-Share text-lg text-disabled hover:text-primary" data-toggle="dropdown" data-target="Share"></a>
+            <div class="dropdown-menu" data-dropdown="Share">
+                <a href="#" class="dropdown-item">
+                    <span class="font-semibold text-sm">Share</span>
+                </a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#" class="icon-Heart text-lg text-disabled hover:text-primary" data-toggle="dropdown" data-target="Save"></a>
+            <div class="dropdown-menu" data-dropdown="Save">
+                <a href="#" class="dropdown-item">
+                    <span class="font-semibold text-sm">Save</span>
+                </a>
+            </div>
+        </div>
     </div>
 {% endmacro %}
 {% macro network(className="") %}
