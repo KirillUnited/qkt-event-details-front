@@ -25,26 +25,6 @@
         pointer-events: auto;
         z-index: 9999;
     }
-
-    &-confirm {
-        text-align: center;
-    }
-
-    p,
-    ul {
-        font-size: 16px;
-        margin-bottom: 0.4em;
-
-        li {
-            font-size: inherit;
-            margin-bottom: inherit;
-        }
-    }
-
-    .form {
-        --width: 100%;
-        --footer-min-height: 0;
-    }
 }
 
 .modal-dialog {
@@ -102,22 +82,6 @@
     cursor: pointer;
     font-size: 20px;
     padding: getMinMax(14px, 14px) getMinMax(24px, 24px);
-}
-
-.modal-tabs {
-    .tabs-navbar {
-        padding-top: getMinMax(24px, 24px);
-    }
-
-    .tabs-content {
-        padding-left: 0;
-        padding-right: 0;
-        overflow-y: auto;
-    }
-
-    .tabs-item {
-        max-width: 100%;
-    }
 }
 
 @include less-sm {

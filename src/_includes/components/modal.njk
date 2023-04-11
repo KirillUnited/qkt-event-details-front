@@ -1,13 +1,6 @@
 <div class="modal modal-show grid grid-cols-details" data-modal="order_tickets" data-close="true">
     <div class="modal-dialog">
-        <div class="stepper">
-            <ul class="stepper-list">
-                <li class="stepper-item">Schedule</li>
-                <li class="stepper-item">TICKETS</li>
-                <li class="stepper-item">MERCHANDISE</li>
-                <li class="stepper-item">DETAILS</li>
-            </ul>
-        </div>
+        {% include "./stepper.njk" %}
         <div class="modal-header">
             <h1>Schedule</h1>
             <p>Select a calendar date and timeslot option below for this event.</p>
