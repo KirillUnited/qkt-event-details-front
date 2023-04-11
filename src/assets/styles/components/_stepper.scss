@@ -2,7 +2,7 @@
     &-list {
         position: relative;
         counter-reset: stepper;
-    
+
         &::after {
             position: absolute;
             left: 0;
@@ -20,8 +20,11 @@
         --before-color: var(--color-heading);
         --before-bg: var(--color-grey);
         --before-border: #fff;
+        position: relative;
+        font-size: getMinMax(12px, 14px);
         color: var(--color);
         background-color: #fff;
+        letter-spacing: 0.0125em;
         z-index: 1;
 
         &::before {
@@ -37,6 +40,21 @@
             background-color: var(--before-bg);
             border-radius: 100%;
             border: 6px solid var(--before-border);
+        }
+
+        &::after {
+            display: none;
+            color: var(--color-heading);
+            font-family: 'icomoon';
+            font-size: 1.6em;
+            content: "\e912";
+            transform: rotate(-90deg);
+        }
+
+        &:last-child{
+            &::after{
+                display: none;
+            }
         }
 
         &-current,
@@ -63,4 +81,22 @@
         }
     }
 
+    @include less-md() {
+        &-list {
+            flex-wrap: wrap;
+
+            &::after {
+                display: none;
+            }
+        }
+
+        &-item {
+            &::before {
+                display: none;
+            }
+            &::after{
+                display: block;
+            }
+        }
+    }
 }
