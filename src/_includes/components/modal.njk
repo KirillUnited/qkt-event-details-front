@@ -1,21 +1,55 @@
-<div class="modal modal-show grid grid-cols-details" data-modal="order_tickets" data-close="true">
-    <div class="modal-dialog">
-        {% include "./stepper.njk" %}
-        <div class="modal-header">
-            <h1>Schedule</h1>
+<div class="modal modal-show flex justify-center items-center" data-modal="order_tickets" data-close="true">
+    <div class="modal-dialog grid grid-cols-details grid-rows-modal w-full max-w-screen-lg h-screen max-h-[790px]">
+        <span class="modal-close" data-close="true">&#10006</span>
+        <div class="modal-header p-3">
+            {% include "./stepper.njk" %}
+        </div>
+        <div class="modal-title py-10 px-6">
+            <h2 class="text-heading text-2xl font-medium mb-4">Schedule</h2>
             <p>Select a calendar date and timeslot option below for this event.</p>
+            <div class="form-input max-w-sm mt-6">
+                <input class="form-input-field" type="text" placeholder="Enter Promotional Code"/>
+                <div class="flex items-center justify-center bg-grey absolute top-0 right-0 w-10 h-full rounded-r-lg border-[#C2C9D1] border">
+                    {% include "../icons/arrow-right.njk" %}
+                </div>
+            </div>
         </div>
-        <div class="modal-content">
-            September 2022
+        <div class="modal-content px-6 overflow-y-auto">
+            {% block content %}
+                Content
+            {% endblock %}
         </div>
-        <div class="modal-footer">
+        <div class="modal-footer flex justify-between gap-2 px-6 py-4">
             <button class="btn" type="button">BACK</button>
             <button class="btn btn-primary" type="button">NEXT</button>
         </div>
-    </div>
-    <div class="modal-sidebar">
-        <div class="modal-img">
-            <img src="/assets/images/Banner-mobile.png" alt="{{title}}">
+        <div class="modal-sidebar flex flex-col">
+            <div class="modal-img">
+                <img class="w-full" src="/assets/images/Banner-mobile.png" width="433" height="144" alt="{{ title }}"/>
+            </div>
+            <div class="modal-sidebar-title px-6 pt-6 pb-4">
+                <h3 class="text-lg font-medium mb-1">{{ title }}</h3>
+                <p class="font-medium text-disabled">Tankwa Town</p>
+            </div>
+            {% include "./modal-sidebar-content.njk" %}
+            <div class="modal-footer flex flex-col gap-2 p-6">
+                <div class="flex items-center font-medium gap-2">
+                    <div class="flex-1">Ticket Quantity</div>
+                    <div class="text-right basis-1/5">0</div>
+                </div>
+                <div class="flex items-center font-medium gap-2">
+                    <div class="flex-1">Subtotal</div>
+                    <div class="text-right basis-1/5">0</div>
+                </div>
+                <div class="flex items-center font-medium gap-2">
+                    <div class="flex-1">Fees</div>
+                    <div class="text-right basis-1/5">R250</div>
+                </div>
+                <div class="flex items-center gap-2 text-heading font-medium text-xl">
+                    <div class="flex-1">Ticket Quantity</div>
+                    <div class="text-right basis-1/5">R3149</div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
