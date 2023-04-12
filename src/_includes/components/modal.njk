@@ -5,14 +5,10 @@
             {% include "./stepper.njk" %}
         </div>
         <div class="modal-title py-10 px-6">
-            <h2 class="text-heading text-2xl font-medium mb-4">Schedule</h2>
-            <p>Select a calendar date and timeslot option below for this event.</p>
-            <div class="form-input max-w-sm mt-6">
-                <input class="form-input-field" type="text" placeholder="Enter Promotional Code"/>
-                <div class="flex items-center justify-center bg-grey absolute top-0 right-0 w-10 h-full rounded-r-lg border-[#C2C9D1] border">
-                    {% include "../icons/arrow-right.njk" %}
-                </div>
-            </div>
+            {% block title %}
+                <h2 class="text-heading text-2xl font-medium mb-4">{{ step_title|safe }}</h2>
+                <p>{{ step_desc|safe }}</p>
+            {% endblock %}
         </div>
         <div class="modal-content px-6 overflow-y-auto">
             {% block content %}

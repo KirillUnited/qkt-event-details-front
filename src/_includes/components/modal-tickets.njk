@@ -1,0 +1,38 @@
+{% extends "./modal.njk" %}
+{% set step_title = "Choose your tickets" %}
+{% set step_desc = "Select which ticket types you wish to purchase below or <a href='#' class='font-medium underline'>click here to browse resale tickets.</a>" %}
+{% block title %}
+    {{ super() }}
+    <div class="form-input max-w-sm mt-6">
+        <input class="form-input-field" type="text" placeholder="Enter Promotional Code"/>
+        <button type="submit" class="flex items-center justify-center bg-grey absolute top-0 right-0 w-10 h-full rounded-r-lg border-[#C2C9D1] border">
+            {% include "../icons/arrow-right.njk" %}
+        </button>
+    </div>
+{% endblock %}
+{% block content %}
+    <div class="flex flex-col">
+        <details class="ticket-groups">
+            <summary class="ticket-title flex justify-between">
+                <div>
+                    <h3 class="text-heading text-lg font-medium mb-4">General Sale (adult)</h3>
+                    <p class="text-disabled">A description of this ticket group.</p>
+                </div>
+                <i class="icon-arrow-down"></i>
+            </summary>
+            {% include "./ticket-card.njk" %}
+            {% include "./ticket-card.njk" %}
+        </details>
+        <details class="ticket-groups">
+            <summary class="ticket-title flex justify-between">
+                <div>
+                    <h3 class="text-heading text-lg font-medium mb-4">Ticket #2: Weekend Pass & Bell Tent Glamping</h3>
+                    <p class="text-disabled">A description of this ticket group.</p>
+                </div>
+                <i class="icon-arrow-down"></i>
+            </summary>
+            {% include "./ticket-card.njk" %}
+            {% include "./ticket-card.njk" %}
+        </details>
+    </div>
+{% endblock %}
