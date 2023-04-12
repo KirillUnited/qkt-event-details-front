@@ -23,6 +23,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-basis: getrem(36px);
             width: getrem(36px);
             height: getrem(36px);
             font-size: getrem(24px);
