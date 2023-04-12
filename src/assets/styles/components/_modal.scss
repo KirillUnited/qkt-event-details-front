@@ -76,21 +76,30 @@
 .modal-sidebar {
     grid-area: sidebar;
     background-color: #FCFCFC;
+
+    .modal-footer {
+        background-color: inherit;
+    }
 }
 
 .modal-close {
     position: absolute;
-    top: getrem(16px);
-    right: getrem(16px);
-    width: getrem(32px);
-    height: getrem(32px);
-    display: grid;
-    place-items: center;
+    top: 0;
+    right: 0;
     cursor: pointer;
     font-size: getrem(14px);
-    background-color: #FFFFFF;
-    border-radius: 50%;
+    padding: getrem(16px);
     z-index: 100;
+
+    .icon-close {
+        display: grid;
+        place-items: center;
+        width: getrem(32px);
+        height: getrem(32px);
+        background-color: #FFFFFF;
+        border-radius: 50%;
+        pointer-events: none;
+    }
 }
 
 .modal-order-list {
