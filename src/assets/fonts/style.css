@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?wf5cye');
-  src:  url('fonts/icomoon.eot?wf5cye#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?wf5cye') format('truetype'),
-    url('fonts/icomoon.woff?wf5cye') format('woff'),
-    url('fonts/icomoon.svg?wf5cye#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?mxjdyg');
+  src:  url('fonts/icomoon.eot?mxjdyg#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?mxjdyg') format('truetype'),
+    url('fonts/icomoon.woff?mxjdyg') format('woff'),
+    url('fonts/icomoon.svg?mxjdyg#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,11 +25,26 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-minus:before {
+  content: "\e910";
+}
+.icon-plus:before {
+  content: "\e911";
+}
 .icon-map-pin:before {
   content: "\e90d";
 }
+.icon-arrow-down:before {
+  content: "\e912";
+}
+.icon-done:before {
+  content: "\e913";
+}
 .icon-menu:before {
   content: "\e90c";
+}
+.icon-Tag-2:before {
+  content: "\e90f";
 }
 .icon-Calendar:before {
   content: "\e900";
@@ -45,18 +60,12 @@
   content: "\e903";
   color: #a5a5aa;
 }
-.icon-location:before {
-  content: "\e904";
-}
 .icon-Lock:before {
   content: "\e905";
   color: #a5a5aa;
 }
 .icon-Share:before {
   content: "\e906";
-}
-.icon-shopping-cart:before {
-  content: "\e907";
 }
 .icon-Tag:before {
   content: "\e908";

@@ -1,0 +1,102 @@
+.stepper {
+    &-list {
+        position: relative;
+        counter-reset: stepper;
+
+        &::after {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            display: block;
+            content: '';
+            width: 100%;
+            height: 1px;
+            background-color: var(--color-text-body);
+        }
+    }
+
+    &-item {
+        --color: var(--color-disabled);
+        --before-color: var(--color-heading);
+        --before-bg: var(--color-grey);
+        --before-border: #fff;
+        position: relative;
+        font-size: getMinMax(12px, 14px);
+        color: var(--color);
+        background-color: #fff;
+        letter-spacing: 0.0125em;
+        z-index: 1;
+
+        &::before {
+            counter-increment: stepper;
+            content: counter(stepper);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-basis: getrem(36px);
+            width: getrem(36px);
+            height: getrem(36px);
+            color: var(--before-color);
+            background-color: var(--before-bg);
+            border-radius: 100%;
+            border: 6px solid var(--before-border);
+        }
+
+        &::after {
+            display: none;
+            color: var(--color-heading);
+            font-family: 'icomoon';
+            font-size: 1.6em;
+            content: "\e912";
+            transform: rotate(-90deg);
+        }
+
+        &:last-child{
+            &::after{
+                display: none;
+            }
+        }
+
+        &-current,
+        &-done {
+            --before-color: #fff;
+            --before-bg: var(--color-green);
+        }
+
+        &-current {
+            --color: var(--color-green);
+
+            &::before {
+                --before-border: #DDF0C9;
+            }
+        }
+
+        &-done {
+            --color: var(--color-heading);
+
+            &::before {
+                font-family: 'icomoon';
+                content: "\e913";
+            }
+        }
+    }
+
+    @include less-md() {
+        &-list {
+            flex-wrap: wrap;
+
+            &::after {
+                display: none;
+            }
+        }
+
+        &-item {
+            &::before {
+                display: none;
+            }
+            &::after{
+                display: block;
+            }
+        }
+    }
+}

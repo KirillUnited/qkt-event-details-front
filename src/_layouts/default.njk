@@ -8,7 +8,7 @@
             {% include "../_includes/head.njk" %}
         {% endblock %}
     </head>
-    <body class="{{ body_class }} font-heebo">
+    <body class="{{ body_class }}">
         <div class="wrapper">
             {% block header %}
                 {% include "../_includes/components/header.njk" %}
@@ -81,6 +81,7 @@
                 {% endblock %}
             </main>
             {% block footer %}{% endblock %}
+            {% include "../_includes/components/modal-tickets.njk" %}
         </div>
         {% block scripts %}
             {% include "../_includes/scripts.njk" %}

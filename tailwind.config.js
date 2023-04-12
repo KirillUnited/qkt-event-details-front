@@ -30,6 +30,9 @@ module.exports = {
       },
       gridTemplateColumns: {
         'details': '1fr 434px',
+      },
+      gridTemplateRows:{
+        'modal': 'auto auto 1fr auto',
       }
     },
   },
