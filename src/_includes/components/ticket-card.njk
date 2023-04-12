@@ -1,33 +1,29 @@
-<div class="ticket-card flex flex-col gap-6">
-    <div class="flex justify-between items-start">
-        <div class="ticket-card-content">
-            <h3 class="text-heading text-lg font-bold">General Sale (adult)</h3>
-            <p class="font-medium">
-                <span class="text-heading">
-                    <span class="line-through">R650</span>
-                    R400</span>
-                <span class="text-disabled">+ R41 fee</span>
-            </p>
-            <div class="flex items-center gap-1 text-sm text-heading flex-1">
-                <i class="icon-Tag-2 text-primary"></i>
-                <span>SPECNO10% PROMO APPLIED (-R250)</span>
-            </div>
-        </div>
-        <div class="ticket-counter flex items-center gap-3">
-            <button class="ticket-counter-item bg-lightGreen text-primary" type="button">
-                <i class="icon-minus"></i>
-            </button>
-            <input class="ticket-counter-item" type="text" value="0" disabled/>
-            <button class="ticket-counter-item bg-lightGreen text-primary" type="button">
-                <i class="icon-plus"></i>
-            </button>
+<div class="ticket-card grid flex-col gap-6">
+    <div class="ticket-card-content">
+        <h3 class="text-heading text-sm md:text-lg font-bold">General Sale (adult)</h3>
+        <p class="font-medium text-sm md:text-base">
+            <span class="text-heading">
+                <span class="line-through">R650</span>
+                R400</span>
+            <span class="text-disabled">+ R41 fee</span>
+        </p>
+        <div class="flex items-center gap-1 text-sm text-heading flex-1">
+            <i class="icon-Tag-2 text-primary"></i>
+            <span>SPECNO10% PROMO APPLIED (-R250)</span>
         </div>
     </div>
-    <div class="ticket-card-footer flex justify-between">
-        <a href="#" class="flex items-center gap-2 font-medium text-sm">
-            <span>See More</span>
+    <div class="ticket-counter flex items-center gap-3">
+        <button class="ticket-counter-item bg-lightGreen text-primary" type="button">
+            <i class="icon-minus"></i>
+        </button>
+        <input class="ticket-counter-item" type="text" value="0" disabled="disabled"/>
+        <button class="ticket-counter-item bg-lightGreen text-primary" type="button">
             <i class="icon-plus"></i>
-        </a>
-        <em class="text-sm text-disabled font-inter">Sales Close 4 November 2022</em>
+        </button>
     </div>
+    <a href="#" class="flex items-center gap-2 font-medium text-sm">
+        <span>See More</span>
+        <i class="icon-plus"></i>
+    </a>
+    <em class="date text-xs md:text-sm text-disabled font-inter">Sales Close 4 November 2022</em>
 </div>

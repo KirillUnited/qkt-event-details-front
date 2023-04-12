@@ -51,8 +51,8 @@
             transform: rotate(-90deg);
         }
 
-        &:last-child{
-            &::after{
+        &:last-child {
+            &::after {
                 display: none;
             }
         }
@@ -91,10 +91,14 @@
         }
 
         &-item {
+            gap: getrem(4px);
+            padding-right: 0;
+
             &::before {
                 display: none;
             }
-            &::after{
+
+            &::after {
                 display: block;
             }
         }
