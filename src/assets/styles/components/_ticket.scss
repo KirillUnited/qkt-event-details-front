@@ -65,6 +65,11 @@
     }
 
     @include less-md() {
+        &-groups {
+            &:last-child{
+                border-bottom: none;
+            }
+        }
         &-card {
             align-items: center;
             &-content {
