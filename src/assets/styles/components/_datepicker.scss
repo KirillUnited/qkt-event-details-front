@@ -6,8 +6,21 @@
     border-radius: 8px;
 }
 
+.timeslot {
+    &-item {
+        border: 1px solid var(--border, var(--color-grey));
+        border-radius: 8px;
+        padding: 12px;
+
+        &-active {
+            --border: var(--color-green);
+        }
+    }
+}
+
 .datepicker.custom {
     width: 50%;
+
     .datepicker__wrapper {
         top: 0;
         left: 0;
