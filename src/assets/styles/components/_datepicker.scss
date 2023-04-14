@@ -4,6 +4,18 @@
     width: min(100%, 556px);
     border: 1px solid #E7E7EE;
     border-radius: 8px;
+
+    @include less-md() {
+        width: min(100%, 320px);
+
+        .datepicker.custom {
+            width: 100%;
+
+            &:last-child {
+                display: none;
+            }
+        }
+    }
 }
 
 .timeslot {

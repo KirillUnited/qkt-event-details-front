@@ -1,10 +1,10 @@
 {% extends "./modal.njk" %}
 {% block content %}
-    <div class="inline-flex gap-4 schedule">
+    <div class="inline-flex justify-center gap-4 schedule mb-6">
         {% include "./datepicker.njk" %}
     </div>
-    <p class="text-disabled text-sm font-medium mt-6">Select timeslot for 4th September</p>
-    <div class="timeslot flex gap-2 mt-2">
+    <p class="text-disabled hidden md:block text-sm font-medium mb-1">Select timeslot for 4th September</p>
+    <div class="timeslot hidden md:flex gap-2 mt-1 mb-6">
         <button type="button" class="timeslot-item">18:00-18:30</button>
         <button type="button" class="timeslot-item timeslot-item-active">18:00-18:30</button>
         <button type="button" class="timeslot-item">18:00-18:30</button>
