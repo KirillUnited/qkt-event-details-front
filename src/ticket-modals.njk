@@ -1,0 +1,31 @@
+{% from "./_includes/components/button.njk" import button %}
+<!DOCTYPE html>
+<html>
+    <head>
+        {% include "./_includes/head.njk" %}
+    </head>
+    <body>
+        <div class="container flex flex-col gap-4">
+            {% set step_title = "Schedule" %}
+            {% set step_desc = "Select a calendar date and timeslot option below for this event." %}
+            {{ button(type="button", className="btn-primary card-cta", text="Schedule", attrs="data-toggle=modal data-target="+step_title|replace(" ", "_")+"") }}
+            {% include "./_includes/components/modal.njk" %}
+
+            {% set step_title = "Choose your tickets" %}
+            {% set step_desc = "Select which ticket types you wish to purchase below or <a href='#' class='font-medium underline'>click here to browse resale tickets.</a>" %}
+            {{ button(type="button", className="btn-primary card-cta", text="TICKETS", attrs="data-toggle=modal data-target="+step_title|replace(" ", "_")+"") }}
+            {% include "./_includes/components/modal-tickets.njk" %}
+
+            {% set step_title = "Merchandise (Optional)" %}
+            {% set step_desc = "Select the merchandise below to add to your order." %}
+            {{ button(type="button", className="btn-primary card-cta", text="MERCHANDISE", attrs="data-toggle=modal data-target="+step_title|replace(" ", "_")+"") }}
+            {% include "./_includes/components/modal.njk" %}
+
+            {% set step_title = "DETAILS" %}
+            {% set step_desc = "You have <span class='font-bold'>15:43</span> to fill out the ticket holder details per ticket below. We do this in order to give everyone a chance to purchase tickets for this event. " %}
+            {{ button(type="button", className="btn-primary card-cta", text="DETAILS", attrs="data-toggle=modal data-target="+step_title|replace(" ", "_")+"") }}
+            {% include "./_includes/components/modal.njk" %}
+        </div>
+        {% include "./_includes/scripts.njk" %}
+    </body>
+</html>
