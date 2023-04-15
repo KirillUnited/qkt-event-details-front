@@ -2,12 +2,12 @@
     $font-size: 16px;
 
     &-label {
-        color: var(--color-text-body);
+        color: #94A3B8;
         font-family: var(--font-main);
         font-style: normal;
         font-weight: 500;
         font-size: calc(14px/$base)*1em;
-        line-height: calc(16px/$base)*1em;
+        line-height: calc(20px/$base)*1em;
     }
 
     &-input {
@@ -60,7 +60,7 @@
     &-checkbox,
     &-radio {
         display: inline-flex;
-        gap: 16px;
+        gap: 8px;
         align-items: flex-start;
         align-self: flex-start;
         font-family: var(--font-main);
@@ -78,6 +78,7 @@
         }
 
         svg {
+            color: var(--color-disabled);
             flex: 0 0 calc(18px/$font-size)*1em;
             width: calc(18px/$font-size)*1em;
             height: calc(18px/$font-size)*1em;
