@@ -25,7 +25,7 @@
                 {% set step_title = "Merchandise (Optional)" %}
                 {% set step_desc = "Select the merchandise below to add to your order." %}
                 {{ button(type="button", className="btn-primary", text="MERCHANDISE", attrs="data-toggle=modal data-target="+step_title|replace(" ", "_")+"") }}
-                {% include "./_includes/components/modal.njk" %}
+                {% include "./_includes/components/modal-merch.njk" %}
                 {% set step_num = 4 %}
                 {% set step_title = "DETAILS" %}
                 {% set step_desc = "You have <span class='font-bold'>15:43</span> to fill out the ticket holder details per ticket below. We do this in order to give everyone a chance to purchase tickets for this event. " %}
@@ -47,6 +47,11 @@
                 {% set step_desc = "Use the seat selector tool below showing seats for <span class='font-medium'>02/09/2022 18:30-19:00</span> and <a href='#' class='underline'>click here for secondary sale options.</a>" %}
                 {{ button(type="button", className="btn-primary", text="Choose your Seats", attrs="data-toggle=modal data-target="+step_title|replace(" ", "_")+"") }}
                 {% include "./_includes/components/modal-seats.njk" %}
+                {% set step_num = 3 %}
+                {% set step_title = "Merchandise (Optional)" %}
+                {% set step_desc = "Select the merchandise below to add to your order." %}
+                {{ button(type="button", className="btn-primary", text="Merchandise (Optional)", attrs="data-toggle=modal data-target="+step_title|replace(" ", "_")+"") }}
+                {% include "./_includes/components/modal-merch.njk" %}
             </div>
         </div>
         {% include "./_includes/scripts.njk" %}

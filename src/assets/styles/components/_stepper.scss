@@ -1,7 +1,6 @@
 .stepper {
     &-list {
         position: relative;
-        flex-wrap: wrap;
         counter-reset: stepper;
 
         &::after {
@@ -84,6 +83,7 @@
 
     @include less-md() {
         &-list {
+            flex-wrap: wrap;
             &::after {
                 display: none;
             }
