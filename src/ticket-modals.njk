@@ -3,13 +3,14 @@
 <!DOCTYPE html>
 <html>
     <head>
+        {% set title = "Modal Frames" %}
         {% include "./_includes/head.njk" %}
     </head>
     <body>
         {% include "./_includes/components/header.njk" %}
         <div class="container flex flex-col gap-4">
             {% set title = "AfrikaBurn 2023 - S P A C E" %}
-            <h1 class="text-2xl mt-6 mb-3 font-bold">Tickets Modal</h1>
+            <h1 class="text-2xl mt-6 mb-3 font-bold">Ticket Modals</h1>
             <div class="flex flex-wrap gap-4">
                 {% set step_num = 1 %}
                 {% set step_title = "Schedule" %}
@@ -27,15 +28,15 @@
                 {{ button(type="button", className="btn-primary", text="MERCHANDISE", attrs="data-toggle=modal data-target="+step_title|replace(" ", "_")+"") }}
                 {% include "./_includes/components/modal-merch.njk" %}
                 {% set step_num = 4 %}
-                {% set step_title = "DETAILS" %}
-                {% set step_desc = "You have <span class='font-bold'>15:43</span> to fill out the ticket holder details per ticket below. We do this in order to give everyone a chance to purchase tickets for this event. " %}
-                {{ button(type="button", className="btn-primary", text="DETAILS", attrs="data-toggle=modal data-target="+step_title|replace(" ", "_")+"") }}
-                {% include "./_includes/components/modal.njk" %}
+                {% set step_title = "Ticket Holder Details" %}
+                {% set step_desc = "You have <span class='font-bold'>15:43</span> to fill out the ticket holder details per ticket below. We do this in order to give everyone a chance to purchase tickets for this event." %}
+                {{ button(type="button", className="btn-primary", text="Ticket Holder Details", attrs="data-toggle=modal data-target="+step_title|replace(" ", "_")+"") }}
+                {% include "./_includes/components/modal-details.njk" %}
             </div>
         </div>
         <div class="container flex flex-col gap-4">
             {% set title = "AfrikaBurn 2023 - S P A C E" %}
-            <h1 class="text-2xl mt-6 mb-3 font-bold">Seats Modal</h1>
+            <h1 class="text-2xl mt-6 mb-3 font-bold">Seat Modals</h1>
             <div class="flex flex-wrap gap-4">
                 {% set step_num = 1 %}
                 {% set step_title = "Schedule" %}
@@ -52,6 +53,11 @@
                 {% set step_desc = "Select the merchandise below to add to your order." %}
                 {{ button(type="button", className="btn-primary", text="Merchandise (Optional)", attrs="data-toggle=modal data-target="+step_title|replace(" ", "_")+"") }}
                 {% include "./_includes/components/modal-merch.njk" %}
+                {% set step_num = 4 %}
+                {% set step_title = "Seat Holder Details" %}
+                {% set step_desc = "You have <span class='font-bold'>15:43</span> to fill out the ticket holder details per ticket below. We do this in order to give everyone a chance to purchase tickets for this event." %}
+                {{ button(type="button", className="btn-primary", text="Seat Holder Details", attrs="data-toggle=modal data-target="+step_title|replace(" ", "_")+"") }}
+                {% include "./_includes/components/modal-details.njk" %}
             </div>
         </div>
         {% include "./_includes/scripts.njk" %}

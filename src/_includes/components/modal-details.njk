@@ -1,0 +1,39 @@
+{% extends "./modal.njk" %}
+{% block title %}
+    {{ super() }}
+    <div class="flex items-center gap-2 mt-6">
+        <span class="text-heading font-bold">2/3</span>
+        <progress class="progressbar flex-1" max="3" value="2"></progress>
+    </div>
+{% endblock %}
+{% block content %}
+    <div class="flex flex-col">
+        <details class="ticket-groups ticket-groups-done">
+            <summary class="ticket-title flex gap-2">
+                <div class="flex-1 self-center">
+                    <h3 class="text-heading text-lg font-medium">Ticket #1: General Sale (adult)</h3>
+                </div>
+                <i class="icon-arrow-down"></i>
+            </summary>
+            {% include "./ticket-details.njk" %}
+        </details>
+        <details class="ticket-groups ticket-groups-done">
+            <summary class="ticket-title flex gap-2">
+                <div class="flex-1 self-center">
+                    <h3 class="text-heading text-lg font-medium">Ticket #2: Weekend Pass & Bell Tent Glamping</h3>
+                </div>
+                <i class="icon-arrow-down"></i>
+            </summary>
+            {% include "./ticket-details.njk" %}
+        </details>
+        <details class="ticket-groups">
+            <summary class="ticket-title flex gap-2">
+                <div class="flex-1 self-center">
+                    <h3 class="text-heading text-lg font-medium">Ticket #3: Weekend Pass & Bell Tent Glamping</h3>
+                </div>
+                <i class="icon-arrow-down"></i>
+            </summary>
+            {% include "./ticket-details.njk" %}
+        </details>
+    </div>
+{% endblock %}
