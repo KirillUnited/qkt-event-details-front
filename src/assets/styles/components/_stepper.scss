@@ -84,7 +84,6 @@
     @include less-md() {
         &-list {
             flex-wrap: wrap;
-
             &::after {
                 display: none;
             }

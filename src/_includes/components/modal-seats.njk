@@ -1,0 +1,17 @@
+{% extends "./modal.njk" %}
+{% block title %}
+    {{ super() }}
+    <div class="form-input max-w-sm mt-6">
+        <input class="form-input-field" type="text" placeholder="Use Rewards Card"/>
+        <button
+            type="submit"
+            class="flex items-center justify-center bg-grey absolute top-0 right-0 w-10 h-full rounded-r-lg border-[#C2C9D1] border">
+            {% include "../icons/arrow-right.njk" %}
+        </button>
+    </div>
+{% endblock %}
+{% block content %}
+    <div class="flex flex-col">
+        <img src="/assets/images/seats.png" alt="Choose your Seats"/>
+    </div>
+{% endblock %}

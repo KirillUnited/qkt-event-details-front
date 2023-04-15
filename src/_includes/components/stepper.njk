@@ -1,16 +1,11 @@
+{% set steps = ["Schedule","TICKETS","MERCHANDISE","DETAILS"] %}
 <div class="stepper">
     <ul class="stepper-list flex items-center md:justify-between md:gap-2 uppercase font-medium">
-        <li class="stepper-item flex gap-2 p-2 items-center stepper-item-done">
-            <span>Schedule</span>
-        </li>
-        <li class="stepper-item flex gap-2 p-2 items-center stepper-item-current">
-            <span>TICKETS</span>
-        </li>
-        <li class="stepper-item flex gap-2 p-2 items-center">
-            <span>MERCHANDISE</span>
-        </li>
-        <li class="stepper-item flex gap-2 p-2 items-center">
-            <span>DETAILS</span>
-        </li>
+        {%- for step in steps -%}
+            <li class="stepper-item flex gap-2 p-2 items-center {{ 'stepper-item-done' if loop.index < step_num }} {{
+                    'stepper-item-current' if loop.index === step_num }}">
+                <span>{{ step }}</span>
+            </li>
+        {%- endfor -%}
     </ul>
 </div>
