@@ -18,3 +18,14 @@
         border-radius: 50%;
     }
 }
+
+.order-sum-mobile {
+    summary {
+        list-style: none;
+        cursor: pointer;
+
+        &::-webkit-details-marker {
+            display: none;
+        }
+    }
+}
