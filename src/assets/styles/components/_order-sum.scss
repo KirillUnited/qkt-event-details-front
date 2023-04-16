@@ -1,0 +1,20 @@
+.order-list {
+    &:empty {
+        &::after {
+            display: block;
+            text-align: center;
+            font-size: getrem(14px);
+            content: 'No Tickets Added Yet';
+        }
+    }
+
+    &-count {
+        display: grid;
+        place-items: center;
+        width: 20px;
+        height: 20px;
+        color: #FFFFFF;
+        background-color: var(--color-green);
+        border-radius: 50%;
+    }
+}
