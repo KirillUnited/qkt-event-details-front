@@ -9,11 +9,19 @@
     z-index: 20;
 
     &-title {
-        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 180ms ease-in-out;
+        z-index: 1;
         margin: 0 auto;
     }
 
     &-navbar {
+        transition: all 180ms ease-in-out;
+
         &-list {
             display: flex;
             align-items: center;
@@ -110,10 +118,14 @@
         &.isScroll {
             .header-title {
                 display: flex;
+                top: 0;
+                opacity: 1;
+                visibility: visible;
             }
-    
+
             .header-navbar {
-                display: none;
+                opacity: 0;
+                visibility: hidden;
             }
         }
     }
