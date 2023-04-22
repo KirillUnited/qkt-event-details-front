@@ -40,3 +40,16 @@
         </div>
     </div>
 {% endmacro %}
+{% macro radio() %}
+    <div class="form-group flex flex-col gap-2">
+        <div class="form-label">How did you find out about us</div>
+        <label class="form-radio">
+            <input type="radio" id="Edit_Registration_SocialMedia" name="Edit_Registration_SocialMedia" value="" checked="">
+            <span class="text-sm">Social Media</span>
+        </label>
+        <label class="form-radio">
+            <input type="radio" id="Edit_Registration_Word" name="Edit_Registration_SocialMedia" value="">
+            <span class="text-sm">Word of Mouth</span>
+        </label>
+    </div>
+{% endmacro %}
