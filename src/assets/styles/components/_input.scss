@@ -167,6 +167,13 @@
         }
     }
 
+    &-select {
+        background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.175 6.53345L10 10.3501L13.825 6.53345L15 7.70845L10 12.7084L5 7.70845L6.175 6.53345Z' fill='%23C2C9D1'/%3E%3Cpath d='M6.175 6.53345L10 10.3501L13.825 6.53345L15 7.70845L10 12.7084L5 7.70845L6.175 6.53345Z' fill='black' fill-opacity='0.25'/%3E%3C/svg%3E%0A");
+        background-position: calc(100% - 8px) center;
+        background-repeat: no-repeat;
+        appearance: none;
+    }
+
     .error-msg {
         position: absolute;
         left: 0;

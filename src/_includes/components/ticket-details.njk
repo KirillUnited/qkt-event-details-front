@@ -1,11 +1,18 @@
-{% from "./input.njk" import input, checkbox %}
+{% from "./input.njk" import input, checkbox, select, radio %}
 <div class="ticket-details grid grid-cols-2 gap-x-2 gap-y-6">
-    {{ input(label="First Name", placeholder="First Name", id="First_Name") }}
-    {{ input(label="Second Name", placeholder="Second Name", id="Second_Name") }}
-    {{ input(type="tel", label="Cellphone", placeholder="Cellphone", id="Cellphone") }}
-    {{ input(type="email", label="Email Address", placeholder="Email Address", id="Email_Address") }}
+    {{ input(label="First Name", placeholder="First Name", id=step_title|replace(" ", "_")+"_First_Name") }}
+    {{ input(label="Second Name", placeholder="Second Name", id=step_title|replace(" ", "_")+"_Second_Name") }}
+    {{ input(type="tel", label="Cellphone", placeholder="Cellphone", id=step_title|replace(" ", "_")+"_Cellphone") }}
+    {{ input(type="email", label="Email Address", placeholder="Email Address", id=step_title|replace(" ", "_")+"_Email_Address") }}
     <div class="col-span-2 flex flex-col gap-6">
-        {{ checkbox(label="Send ticket details by SMS (R3 charge)", id="SMS") }}
-        {{ checkbox(label="Email this ticket holder a copy of this ticket", id="Email_ticket") }}
+        {{ checkbox(label="Send ticket details by SMS (R3 charge)", id=step_title|replace(" ", "_")+"_SMS") }}
+        {{ checkbox(label="Email this ticket holder a copy of this ticket", id=step_title|replace(" ", "_")+"_Email_ticket") }}
+    </div>
+    <div class="col-span-2 flex flex-col gap-6">
+        {{ select(label="Country", id=step_title|replace(" ", "_")+"_Country") }}
+    </div>
+    <div class="col-span-2 flex flex-col gap-6">
+        {{ radio() }}
+        {{ radio() }}
     </div>
 </div>
