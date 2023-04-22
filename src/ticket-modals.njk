@@ -16,22 +16,22 @@
                 {% set step_title = "Schedule" %}
                 {% set step_desc = "Select a calendar date and timeslot option below for this event." %}
                 {{ button(type="button", className="btn-primary", text="Schedule", attrs="data-toggle=modal data-target="+step_title|replace(" ", "_")+"") }}
-                {% include "./_includes/components/modal-schedule.njk" %}
+                {% include "./_includes/components/modal/modal-schedule.njk" %}
                 {% set step_num = 2 %}
                 {% set step_title = "Choose your tickets" %}
                 {% set step_desc = "Select which ticket types you wish to purchase below or <a href='#' class='font-medium underline'>click here to browse resale tickets.</a>" %}
                 {{ button(type="button", className="btn-primary", text="TICKETS", attrs="data-toggle=modal data-target="+step_title|replace(" ", "_")+"") }}
-                {% include "./_includes/components/modal-tickets.njk" %}
+                {% include "./_includes/components/modal/modal-tickets.njk" %}
                 {% set step_num = 3 %}
                 {% set step_title = "Merchandise (Optional)" %}
                 {% set step_desc = "Select the merchandise below to add to your order." %}
                 {{ button(type="button", className="btn-primary", text="MERCHANDISE", attrs="data-toggle=modal data-target="+step_title|replace(" ", "_")+"") }}
-                {% include "./_includes/components/modal-merch.njk" %}
+                {% include "./_includes/components/modal/modal-merch.njk" %}
                 {% set step_num = 4 %}
                 {% set step_title = "Ticket Holder Details" %}
                 {% set step_desc = "You have <span class='font-bold'>15:43</span> to fill out the ticket holder details per ticket below. We do this in order to give everyone a chance to purchase tickets for this event." %}
                 {{ button(type="button", className="btn-primary", text="Ticket Holder Details", attrs="data-toggle=modal data-target="+step_title|replace(" ", "_")+"") }}
-                {% include "./_includes/components/modal-details.njk" %}
+                {% include "./_includes/components/modal/modal-details.njk" %}
             </div>
         </div>
         <div class="container flex flex-col gap-4">
@@ -42,22 +42,22 @@
                 {% set step_title = "Schedule" %}
                 {% set step_desc = "Select a calendar date and timeslot option below for this event." %}
                 {{ button(type="button", className="btn-primary", text="Schedule", attrs="data-toggle=modal data-target="+step_title|replace(" ", "_")+"") }}
-                {% include "./_includes/components/modal-schedule.njk" %}
+                {% include "./_includes/components/modal/modal-schedule.njk" %}
                 {% set step_num = 2 %}
                 {% set step_title = "Choose your Seats" %}
                 {% set step_desc = "Use the seat selector tool below showing seats for <span class='font-medium'>02/09/2022 18:30-19:00</span> and <a href='#' class='underline'>click here for secondary sale options.</a>" %}
                 {{ button(type="button", className="btn-primary", text="Choose your Seats", attrs="data-toggle=modal data-target="+step_title|replace(" ", "_")+"") }}
-                {% include "./_includes/components/modal-seats.njk" %}
+                {% include "./_includes/components/modal/modal-seats.njk" %}
                 {% set step_num = 3 %}
                 {% set step_title = "Merchandise (Optional)" %}
                 {% set step_desc = "Select the merchandise below to add to your order." %}
                 {{ button(type="button", className="btn-primary", text="Merchandise (Optional)", attrs="data-toggle=modal data-target="+step_title|replace(" ", "_")+"") }}
-                {% include "./_includes/components/modal-merch.njk" %}
+                {% include "./_includes/components/modal/modal-merch.njk" %}
                 {% set step_num = 4 %}
                 {% set step_title = "Seat Holder Details" %}
                 {% set step_desc = "You have <span class='font-bold'>15:43</span> to fill out the ticket holder details per ticket below. We do this in order to give everyone a chance to purchase tickets for this event." %}
                 {{ button(type="button", className="btn-primary", text="Seat Holder Details", attrs="data-toggle=modal data-target="+step_title|replace(" ", "_")+"") }}
-                {% include "./_includes/components/modal-details.njk" %}
+                {% include "./_includes/components/modal/modal-details.njk" %}
             </div>
         </div>
         {% include "./_includes/scripts.njk" %}

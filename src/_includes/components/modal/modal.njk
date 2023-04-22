@@ -5,7 +5,7 @@
             <i class="icon-close"></i>
         </span>
         <div class="modal-header p-3">
-            {% include "./stepper.njk" %}
+            {% include "../stepper.njk" %}
         </div>
         <div class="modal-title py-10 px-4 md:px-6">
             {% block title %}
@@ -13,7 +13,7 @@
                 <p class="text-sm md:text-base">{{ step_desc|safe }}</p>
             {% endblock %}
         </div>
-        <div class="modal-content px-4 md:px-6">
+        <div class="modal-content flex-1 px-4 md:px-6">
             {% block content %}
                 <span class="text-sm text-disabled">No Content Provided</span>
             {% endblock %}

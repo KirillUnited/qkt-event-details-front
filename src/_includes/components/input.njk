@@ -29,3 +29,14 @@
         <span class="text-sm">{{ label }}</span>
     </label>
 {% endmacro %}
+{% macro select(label="", id="") %}
+    <div class="form-group flex flex-col gap-2">
+        <label class="form-label" for="{{ id }}">{{ label }}</label>
+        <div class="form-input">
+            <select class="form-input-field form-select" id="{{ id }}" name="{{ id }}">
+                <option disabled="" selected="">Please Select</option>
+                <option value="South Africa">South Africa</option>
+            </select>
+        </div>
+    </div>
+{% endmacro %}
