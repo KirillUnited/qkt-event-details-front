@@ -1,0 +1,26 @@
+{% from "../socials.njk" import network %}
+<div class="header-sidenav">
+    <div class="header-sidenav-dialog flex flex-col">
+        <div class="header-sidenav-heading flex flex-col gap-5">
+            <a href="/" class="back">
+                <img src="/assets/images/icons/logo.svg" class="logo" width="134" height="38" alt="Quicket"/>
+            </a>
+            <div class="form-input">
+                <input type="search" class="form-input-field" placeholder="Search here"/>
+                <i class="form-input-icon icon-search"></i>
+            </div>
+        </div>
+        <ul class="header-sidenav-menu flex-1">
+            {%- for el in item.list -%}
+                <li>
+                    <a href="{{ el.link }}" class="font-medium capitalize">{{ el.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+        <div class="header-sidenav-footer">
+            <p class="font-medium capitalize mb-3">Follow Us</p>
+            {{ network() }}
+            <a href="#" class="btn w-full text-sm text-center font-medium uppercase mt-6">LOG OUT</a>
+        </div>
+    </div>
+</div>

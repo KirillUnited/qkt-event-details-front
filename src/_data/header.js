@@ -11,7 +11,15 @@ module.exports = {
             "link": ""
         },
         {
-            "title": "EARN COmission",
+            "title": "Help",
+            "link": ""
+        },
+        {
+            "title": "Browse Events",
+            "link": ""
+        },
+        {
+            "title": "Earn Commission",
             "link": ""
         },
         {
@@ -20,4 +28,4 @@ module.exports = {
         }
     ],
     "footer": { "title": "Log Out", "link": "" }
-}
+};
