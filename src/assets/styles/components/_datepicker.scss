@@ -39,16 +39,15 @@
         width: 100%;
         height: 100%;
         border: none;
+        font-family: var(--font-main);
     }
 
     .datepicker__header {
         background-color: #fff;
     }
 
-    .datepicker__title,
-    table th,
-    .btn {
-        font-size: getMinMax(14px, 14px);
+    table th {
+        font-size: getMinMax(12px, 12px);
     }
 
     .datepicker__title,
@@ -56,8 +55,11 @@
     .datepicker__day,
     .datepicker__wrapper {
         color: var(--color-text-body);
-        font-family: "Inter", sans-serif;
         font-weight: 400;
+    }
+
+    .datepicker__title {
+        font-weight: 500;
     }
 
     .datepicker__day.is-disabled,
@@ -72,10 +74,6 @@
     .datepicker__day.is-selected div,
     .datepicker__day.is-selected:hover div::after {
         background-color: var(--color-green);
-    }
-
-    .datepicker__daynum {
-        font-size: getMinMax(16px, 16px);
     }
 
     .datepicker__next,
