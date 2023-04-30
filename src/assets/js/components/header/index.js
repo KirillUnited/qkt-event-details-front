@@ -1,27 +1,27 @@
 const header = () => {
-    const header = document.getElementById("header");
-    const sideNav = header?.querySelector('.header-sidenav');
-    const contentHeading = document.querySelector(".content-heading");
+    const element = document.getElementById("header");
+    const sideNav = element?.querySelector('[data-element="sidenav"]');
+    const contentHeading = document.querySelector("[data-content-heading]");
     const headerHandler = () => {
         if (scrollY >= contentHeading.offsetTop - 120) {
-            header?.classList.add("isScroll");
+            element?.classList.add("isScroll");
         } else {
-            header?.classList.remove("isScroll");
+            element?.classList.remove("isScroll");
         }
     };
 
     document.addEventListener("scroll", onScroll);
-    header?.addEventListener('click', onClick);
+    element?.addEventListener('click', onClick);
 
     function onScroll(e) {
         contentHeading && headerHandler();
     }
 
     function onClick(e) {
-        const menuBtn = e.target.closest('.header-menu-btn');
+        const menuBtn = e.target.closest('[data-element="menuBtn"]');
 
         if (menuBtn || (e.target === sideNav)) {
-            sideNav?.classList.toggle('isOpen');
+            sideNav.classList.toggle('isOpen');
         }
     }
 };

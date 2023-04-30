@@ -34,6 +34,6 @@ const tabs = () => {
             newTab.classList.add('tabs-link-active');
         }
     }
-}
+};
 
 export default tabs;
