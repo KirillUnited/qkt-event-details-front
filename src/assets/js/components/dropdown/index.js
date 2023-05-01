@@ -1,27 +1,37 @@
-const dropdown = () => {
+const dropdown = (config = {}) => {
+    const model = {
+        elementSelector: '.dropdown',
+        showButtonSelector: '[data-toggle="dropdown"]',
+        showClassName: 'dropdown-show'
+    };
+    const {
+        elementSelector,
+        showButtonSelector,
+        showClassName
+    } = Object.assign(model, config);
     let current = null;
-    const elements = document.querySelectorAll('.dropdown');
+    const elements = document.querySelectorAll(elementSelector);
     if (elements.length === 0) return;
-    const showButtons = document.querySelectorAll('[data-toggle="dropdown"]');
+    const showButtons = document.querySelectorAll(showButtonSelector);
 
     showButtons.forEach((btn) => btn.addEventListener('click', show));
     document.addEventListener('click', hide);
 
     function show(e) {
         e.preventDefault();
-        const target = this.closest('.dropdown');
+        const target = this.closest(elementSelector);
 
-        current && current.classList.remove('dropdown-show');
+        current && current.classList.remove(showClassName);
         current = target;
-        target.classList.toggle('dropdown-show');
+        target.classList.toggle(showClassName);
     }
 
     function hide(e) {
         elements.forEach((dropdown) => {
-            const target = e.target.closest(".dropdown");
+            const target = e.target.closest(elementSelector);
 
             if (target) return;
-            dropdown.classList.remove('dropdown-show');
+            dropdown.classList.remove(showClassName);
         });
     }
 };
