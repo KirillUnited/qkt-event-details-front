@@ -1,7 +1,13 @@
-const header = () => {
-    const element = document.getElementById("header");
-    const sideNav = element?.querySelector('[data-element="sidenav"]');
-    const contentHeading = document.querySelector("[data-content-heading]");
+const header = (config = {}) => {
+    const model = {
+        elementId: "header",
+        sideNavSelector: '[data-element="sidenav"]',
+        contentHeadingSelector: "[data-content-heading]"
+    };
+    const {elementId, sideNavSelector, contentHeadingSelector} = Object.assign(model, config);
+    const element = document.getElementById(elementId);
+    const sideNav = element?.querySelector(sideNavSelector);
+    const contentHeading = document.querySelector(contentHeadingSelector);
     const headerHandler = () => {
         if (scrollY >= contentHeading.offsetTop - 120) {
             element?.classList.add("isScroll");
