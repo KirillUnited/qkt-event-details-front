@@ -1,15 +1,31 @@
-const tabs = () => {
-    const tabsContainer = document.querySelectorAll(".tabs");
-    const tabsPanel = document.querySelectorAll('[data-panel]');
+const tabs = (config = {}) => {
+    const model = {
+        containerSelector: ".tabs",
+        panelSelector: '[data-panel]',
+        listSelector: ".tabs-list",
+        tabSelector: ".tabs-link",
+        sectionTopDiff: 300,
+        activeClassName: 'tabs-link-active'
+    };
+    const {
+        containerSelector,
+        panelSelector,
+        listSelector,
+        tabSelector,
+        sectionTopDiff,
+        activeClassName
+    } = Object.assign(model, config);
+    const containers = document.querySelectorAll(containerSelector);
+    const panels = document.querySelectorAll(panelSelector);
     const handleTabs = (element) => {
-        const tabslist = element.querySelector(".tabs-list");
-        const tabs = tabslist.querySelectorAll(".tabs-link");
+        const tabslist = element.querySelector(listSelector);
+        const tabs = tabslist.querySelectorAll(tabSelector);
         let current = null;
 
-        tabsPanel.forEach((section) => {
+        panels.forEach((section) => {
             const sectionTop = section.offsetTop;
 
-            if (scrollY >= sectionTop - 300) {
+            if (scrollY >= sectionTop - sectionTopDiff) {
                 current = section.getAttribute("id");
             }
         });
@@ -24,14 +40,14 @@ const tabs = () => {
     document.addEventListener("scroll", onScroll);
 
     function onScroll(e) {
-        tabsContainer.forEach((element) => handleTabs(element));
+        containers.forEach((element) => handleTabs(element));
     }
 
     function switchTab(oldTab, newTab) {
-        oldTab.classList.remove('tabs-link-active');
+        oldTab.classList.remove(activeClassName);
 
         if (newTab) {
-            newTab.classList.add('tabs-link-active');
+            newTab.classList.add(activeClassName);
         }
     }
 };

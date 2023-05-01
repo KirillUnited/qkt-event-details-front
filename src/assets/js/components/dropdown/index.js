@@ -1,4 +1,4 @@
-const dropdown = (config={}) => {
+const dropdown = (config = {}) => {
     const model = {
         elementSelector: '.dropdown',
         showButtonSelector: '[data-toggle="dropdown"]',
