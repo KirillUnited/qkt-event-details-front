@@ -1,27 +1,41 @@
-const header = () => {
-    const header = document.getElementById("header");
-    const sideNav = header?.querySelector('.header-sidenav');
-    const contentHeading = document.querySelector(".content-heading");
-    const headerHandler = () => {
-        if (scrollY >= contentHeading.offsetTop - 120) {
-            header?.classList.add("isScroll");
-        } else {
-            header?.classList.remove("isScroll");
-        }
+const header = (config = {}) => {
+    const model = {
+        elementId: "header",
+        sideNavSelector: '[data-element="sidenav"]',
+        menuBtnSelector: '[data-element="menuBtn"]',
+        contentHeadingSelector: "[data-content-heading]"
     };
+    const {
+        elementId,
+        sideNavSelector,
+        menuBtnSelector,
+        contentHeadingSelector
+    } = Object.assign(model, config);
+    const element = document.getElementById(elementId);
+    const sideNav = element?.querySelector(sideNavSelector);
+    const contentHeading = document.querySelector(contentHeadingSelector);
 
     document.addEventListener("scroll", onScroll);
-    header?.addEventListener('click', onClick);
+    element?.addEventListener('click', onClick);
 
     function onScroll(e) {
-        contentHeading && headerHandler();
+        if (!contentHeading) {
+            document.removeEventListener("scroll", onScroll);
+            return;
+        }
+
+        if (scrollY >= contentHeading.offsetTop - 120) {
+            element?.classList.add("isScroll");
+        } else {
+            element?.classList.remove("isScroll");
+        }
     }
 
     function onClick(e) {
-        const menuBtn = e.target.closest('.header-menu-btn');
+        const menuBtn = e.target.closest(menuBtnSelector);
 
         if (menuBtn || (e.target === sideNav)) {
-            sideNav?.classList.toggle('isOpen');
+            sideNav.classList.toggle('isOpen');
         }
     }
 };
