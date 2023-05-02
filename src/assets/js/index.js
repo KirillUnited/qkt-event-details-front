@@ -5,7 +5,9 @@ import header from "./components/header";
 import tabs from "./components/tabs";
 import modal from "./components/modal";
 // Tabs
-tabs();
+tabs({
+    listSelector: '[data-tablist]'
+});
 // Dropdown
 dropdown();
 // Header
