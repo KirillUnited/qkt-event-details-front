@@ -1,14 +1,9 @@
 const dropdown = (config = {}) => {
-    const model = {
-        elementSelector: '.dropdown',
-        showButtonSelector: '[data-toggle="dropdown"]',
-        showClassName: 'dropdown-show'
-    };
     const {
-        elementSelector,
-        showButtonSelector,
-        showClassName
-    } = Object.assign(model, config);
+        elementSelector = '.dropdown',
+        showButtonSelector = '[data-toggle="dropdown"]',
+        showClassName = 'dropdown-show'
+    } = Object.assign({}, config);
     let current = null;
     const elements = document.querySelectorAll(elementSelector);
     if (elements.length === 0) return;
