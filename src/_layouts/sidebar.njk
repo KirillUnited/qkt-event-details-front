@@ -1,0 +1,36 @@
+{% extends "./default.njk" %}
+{% from "../_includes/components/button.njk" import button %}
+{% block content %}
+    <section class="section">
+        <div class="container xl:max-w-7xl">
+            <div class="md:grid grid-cols-details gap-10">
+                <div class="content-wrap">
+                    <div class="content-inner pt-2 pb-4">
+                        <h2 class="text-heading font-medium">{{ title }}</h2>
+                        {{ content | safe }}
+                    </div>
+                </div>
+                <aside class="sidebar hidden md:block">
+                    <div class="sticky top-48">
+                        <div class="card">
+                            {% include "../_includes/components/order-sum.njk" %}
+                            <div class="card-footer">
+                                {{ button(type="button", className="btn-primary card-cta", text="PROCEED TO CHECKOUT") }}
+                            </div>
+                        </div>
+                        <div class="payments flex flex-col items-center gap-6 mt-9">
+                            <p class="flex items-center gap-2 text-disabled text-sm">
+                                <i class="icon-Lock"></i>
+                                <span>Payments are secure and encrypted</span>
+                            </p>
+                            <img src="/assets/images/payment-options.png" width="360" height="26"
+                                 alt="Payments are secure and encrypted">
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% block footer %}
+{% endblock %}
