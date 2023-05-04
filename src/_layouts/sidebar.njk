@@ -1,9 +1,8 @@
 {% extends "./default.njk" %}
-{% from "../_includes/components/button.njk" import button %}
 {% block content %}
     <section class="section">
         <div class="container xl:max-w-7xl">
-            <div class="md:grid grid-cols-details gap-10">
+            <div class="md:grid grid-cols-details gap-10 py-10">
                 <div class="content-wrap">
                     <div class="content-inner pt-2 pb-4">
                         <h2 class="text-heading font-medium">{{ title }}</h2>
@@ -13,19 +12,30 @@
                 <aside class="sidebar hidden md:block">
                     <div class="sticky top-48">
                         <div class="card">
-                            {% include "../_includes/components/order-sum.njk" %}
-                            <div class="card-footer">
-                                {{ button(type="button", className="btn-primary card-cta", text="PROCEED TO CHECKOUT") }}
+                            <p class="text-heading text-2xl font-medium">
+                                Order Summary
+                            </p>
+                            <div class="card-content">
+                                {% if pageName === "Checkout" %}
+                                    <div class="card-body">
+                                        {% include "../_includes/components/order/order-sum.njk" %}
+                                    </div>
+                                {% endif %}
+                                <div class="card-body flex flex-col gap-7">
+                                    {% include "../_includes/components/order/order-total.njk" %}
+                                </div>
+                                <div class="card-footer text-right">
+                                    {% if pageName === "Checkout" %}
+                                        <a href="#" class="text-sm underline">Cancel Order</a>
+                                    {% elseif pageName === "Cart" %}
+                                        <a href="#" class="btn btn-primary card-cta">
+                                            PROCEED TO CHECKOUT
+                                        </a>
+                                    {% endif %}
+                                </div>
                             </div>
                         </div>
-                        <div class="payments flex flex-col items-center gap-6 mt-9">
-                            <p class="flex items-center gap-2 text-disabled text-sm">
-                                <i class="icon-Lock"></i>
-                                <span>Payments are secure and encrypted</span>
-                            </p>
-                            <img src="/assets/images/payment-options.png" width="360" height="26"
-                                 alt="Payments are secure and encrypted">
-                        </div>
+                        {% include "../_includes/components/payments.njk" %}
                     </div>
                 </aside>
             </div>
