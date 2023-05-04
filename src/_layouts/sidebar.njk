@@ -1,7 +1,7 @@
 {% extends "./default.njk" %}
 {% block header %}
     {{ super() }}
-    <div class="sticky top-[70px] text-center text-white bg-primary {{ 'bg-secondary' if pageName === 'Checkout' }} p-4">
+    <div class="sticky top-[70px] md:top-[80px] z-10 text-center text-white bg-primary {{ 'bg-secondary' if pageName === 'Checkout' }} p-4">
         You have 15:43 to checkout below.
         <span class="hidden md:inline">We do this in order to give
             everyone a chance to purchase tickets for this event.</span>
@@ -28,14 +28,14 @@
             </div>
         </div>
         <div class="container xl:max-w-7xl">
-            <div class="md:grid grid-cols-details gap-10 py-10">
+            <div class="md:grid grid-cols-details gap-10">
                 <div class="content-wrap">
                     <div class="content-inner pt-2 pb-4">
                         <h2 class="text-heading font-medium">{{ title }}</h2>
                         {{ content | safe }}
                     </div>
                 </div>
-                <aside class="sidebar hidden md:block">
+                <aside class="sidebar hidden md:block py-10">
                     <div class="sticky top-48">
                         <div class="card">
                             <p class="text-heading text-2xl font-medium">
