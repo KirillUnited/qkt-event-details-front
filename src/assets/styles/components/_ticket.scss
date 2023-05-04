@@ -4,7 +4,7 @@
         padding-bottom: getrem(24px);
         border-bottom: 1px solid var(--color-grey);
 
-        &>*+* {
+        & > * + * {
             margin-top: getrem(40px);
         }
 
@@ -75,6 +75,47 @@
         }
     }
 
+    &-preview {
+        display: flex;
+        border: 1px solid #E7E7EE;
+        border-radius: 8px;
+        overflow: hidden;
+
+        &-img {
+            --width: 274;
+            --height: 144;
+            @include get-aspect-ratio();
+            position: relative;
+            flex: 0 1 getrem(274px);
+
+            & > img {
+                @include o-fit-absolute();
+            }
+        }
+
+        &-body {
+            flex: 1 1 0;
+            grid-template-columns: repeat(2, auto);
+            grid-template-rows: 1fr auto;
+            padding: getrem(16px);
+        }
+
+        &-title {
+            grid-column: 1/1;
+            grid-row: 1/2;
+        }
+
+        &-del {
+            grid-column: 1/1;
+            grid-row: 2/3;
+        }
+
+        &-cost {
+            grid-column: 2/3;
+            grid-row: 2/3;
+        }
+    }
+
     @include less-md() {
         &-groups {
             &:last-child {
@@ -98,6 +139,9 @@
         &-counter {
             grid-column: 2/3;
             grid-row: 3/4;
+        }
+        &-preview {
+            flex-direction: column;
         }
     }
 }

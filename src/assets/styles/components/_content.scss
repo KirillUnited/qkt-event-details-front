@@ -7,7 +7,7 @@
     }
 
     &-inner {
-        .text-heading {
+        &-title {
             font-size: getMinMax(20px, 24px);
             padding-top: getMinMax(16px, 32px);
             padding-bottom: getMinMax(16px, 24px);
