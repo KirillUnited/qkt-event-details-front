@@ -1,4 +1,4 @@
-{% from "./input.njk" import input, checkbox, select, radio %}
+{% from "../input.njk" import input, checkbox, select, radio %}
 <div class="ticket-details grid grid-cols-2 gap-x-2 gap-y-6">
     {{ input(label="First Name", placeholder="First Name", id=step_title|replace(" ", "_")+"_First_Name") }}
     {{ input(label="Second Name", placeholder="Second Name", id=step_title|replace(" ", "_")+"_Second_Name") }}
