@@ -82,11 +82,10 @@
         overflow: hidden;
 
         &-img {
-            --width: 274;
-            --height: 144;
-            @include get-aspect-ratio();
             position: relative;
             flex: 0 1 getrem(274px);
+            max-height: 177px;
+            padding-bottom: 144px;
 
             & > img {
                 @include o-fit-absolute();
