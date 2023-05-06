@@ -1,0 +1,77 @@
+{% extends "./default.njk" %}
+{% block header %}
+    {{ super() }}
+    <div class="notification sticky top-[70px] sm:top-[80px] z-10 text-center text-white bg-primary {{ 'bg-secondary' if pageName === 'Checkout' }} p-4">
+        You have 15:43 to checkout below.
+        <span class="hidden md:inline">We do this in order to give
+            everyone a chance to purchase tickets for this event.</span>
+    </div>
+{% endblock %}
+{% block content %}
+    <section class="section">
+        <div class="md:hidden">
+            <div class="card-content">
+                {% if pageName === "Checkout" %}
+                    <div class="card-body flex flex-col gap-6 px-6">
+                        {% include "../_includes/components/order/order-list-mobile.njk" %}
+                        {% include "../_includes/components/order/order-list-mobile.njk" %}
+                    </div>
+                {% endif %}
+                <div class="card-body flex flex-col gap-6 border px-6">
+                    {% if pageName === "Cart" %}
+                        <p class="text-heading text-2xl font-medium">
+                            Order Summary
+                        </p>
+                    {% endif %}
+                    {% include "../_includes/components/order/order-total.njk" %}
+                </div>
+            </div>
+        </div>
+        <div class="container xl:max-w-6xl">
+            <div class="md:grid grid-cols-details gap-10">
+                <div class="content-wrap pt-5 pb-4">
+                    <h2 class="content-inner-title text-heading font-medium">{{ title }}</h2>
+                    {{ content | safe }}
+                </div>
+                <aside class="sidebar hidden md:block py-10">
+                    <div class="sticky top-48">
+                        <div class="card">
+                            <p class="text-heading text-2xl font-medium">
+                                Order Summary
+                            </p>
+                            <div class="card-content">
+                                {% if pageName === "Checkout" %}
+                                    <div class="card-body">
+                                        {% include "../_includes/components/order/order-sum.njk" %}
+                                    </div>
+                                {% endif %}
+                                <div class="card-body flex flex-col gap-6">
+                                    {% include "../_includes/components/order/order-total.njk" %}
+                                </div>
+                                <div class="card-footer text-right">
+                                    {% if pageName === "Checkout" %}
+                                        <a href="#" class="text-sm underline">Cancel Order</a>
+                                    {% elseif pageName === "Cart" %}
+                                        <a href="#" class="btn btn-primary card-cta">
+                                            PROCEED TO CHECKOUT
+                                        </a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        {% include "../_includes/components/payments.njk" %}
+                    </div>
+                </aside>
+            </div>
+        </div>
+        {% if pageName === "Cart" %}
+            <div class="sticky bottom-0 p-4 border md:hidden bg-white">
+                <a href="#" class="btn btn-primary card-cta">
+                    PROCEED TO CHECKOUT
+                </a>
+            </div>
+        {% endif %}
+    </section>
+{% endblock %}
+{% block footer %}
+{% endblock %}

@@ -62,13 +62,7 @@
                                 <aside class="sidebar hidden md:block">
                                     <div class="sticky top-48">
                                         {% include "../_includes/components/card.njk" %}
-                                        <div class="payments flex flex-col items-center gap-6 mt-9">
-                                            <p class="flex items-center gap-2 text-disabled text-sm">
-                                                <i class="icon-Lock"></i>
-                                                <span>Payments are secure and encrypted</span>
-                                            </p>
-                                            <img src="/assets/images/payment-options.png" width="360" height="26" alt="Payments are secure and encrypted">
-                                        </div>
+                                        {% include "../_includes/components/payments.njk" %}
                                     </div>
                                 </aside>
                             </div>
@@ -79,11 +73,12 @@
                     </section>
                 {% endblock %}
             </main>
-            {% block footer %}{% endblock %}
-            {% set step_num = 2 %}
-            {% set step_title = "Choose your tickets" %}
-            {% set step_desc = "Select which ticket types you wish to purchase below or <a href='#' class='font-medium underline'>click here to browse resale tickets.</a>" %}
-            {% include "../_includes/components/modal/modal-tickets.njk" %}
+            {% block footer %}
+                {% set step_num = 2 %}
+                {% set step_title = "Choose your tickets" %}
+                {% set step_desc = "Select which ticket types you wish to purchase below or <a href='#' class='font-medium underline'>click here to browse resale tickets.</a>" %}
+                {% include "../_includes/components/modal/modal-tickets.njk" %}
+            {% endblock %}
         </div>
         {% block scripts %}
             {% include "../_includes/scripts.njk" %}
