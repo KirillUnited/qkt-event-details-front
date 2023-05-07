@@ -29,7 +29,7 @@
         </div>
         <div class="container xl:max-w-6xl">
             <div class="md:grid grid-cols-details gap-10">
-                <div class="content-wrap pt-5 pb-4">
+                <div class="content-wrap pt-5 pb-10">
                     {{ content | safe }}
                 </div>
                 <aside class="sidebar hidden md:block py-10">
@@ -58,7 +58,7 @@
                                 </div>
                             </div>
                         </div>
-                        {% include "../_includes/components/payments.njk" %}
+                        {% include "../_includes/components/payments/payments.njk" %}
                     </div>
                 </aside>
             </div>
