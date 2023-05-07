@@ -19,12 +19,13 @@
                     {% set item = header %}
                     {% set has_dropdown = true %}
                     {% include "./header-dropdown.njk" %}
-                    <li>
-                        <a href="#" class="cart flex gap-5">
+                    <li class="dropdown">
+                        <a href="#" class="cart flex gap-5" data-toggle="dropdown">
                             <span class="hidden md:block">CART</span>
                             {% include "../../icons/cart.njk" %}
                             <span class="flex items-center justify-center cart-count text-white bg-primary">0</span>
                         </a>
+                        {% include "../cart/cart-preview.njk" %}
                     </li>
                     <li class="sm:hidden">
                         <button type="button" class="flex text-2xl header-menu-btn" data-element="menuBtn">
