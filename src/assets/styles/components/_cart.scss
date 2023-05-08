@@ -10,8 +10,8 @@
     &-preview {
         &.dropdown-menu {
             --btn-height: 50px;
-            width: getMinMax(506px, 506px);
-            left: calc(-50% - 20px);
+            width: getMinMax(270px, 506px);
+            left: calc(-50% - 24px);
             border-radius: 0;
             padding: 0;
 
@@ -63,6 +63,16 @@
 
             .btn {
                 --min-width: min(50%, 242px);
+            }
+        }
+    }
+
+    @include less-md() {
+        &-preview {
+            &.dropdown-menu {
+                left: auto;
+                right: 0;
+                transform: translateY(46px);
             }
         }
     }
