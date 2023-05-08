@@ -1,0 +1,27 @@
+.payment-methods {
+    &-item {
+        &:first-child {
+            .form-item-outline {
+                --border-radius: 8px 8px 0 0;
+            }
+        }
+
+        &:last-child {
+            .form-item-outline {
+                --border-radius: 0 0 8px 8px;
+            }
+        }
+
+        .form-item-outline {
+            --border-radius: 0;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            padding: getMinMax(24px, 36px) getMinMax(16px, 24px);
+
+            [class*="text"] {
+                font-size: getMinMax(14px, 16px);
+            }
+        }
+    }
+}

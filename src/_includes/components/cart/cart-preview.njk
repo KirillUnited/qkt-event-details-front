@@ -1,0 +1,17 @@
+<div class="cart-preview dropdown-menu">
+    <ul class="cart-preview-list">
+        {% for item in [1,2,3] %}
+            <li class="cart-preview-item">
+                {% include "../ticket/ticket-preview.njk" %}
+            </li>
+        {% endfor %}</ul>
+    <div class="text-base font-medium text-right px-4 py-2">Total: R900</div>
+    <div class="cart-preview-footer">
+        <a href="/cart" class="btn">
+            VIEW CART
+        </a>
+        <a href="/checkout" class="btn btn-primary">
+            CHECKOUT
+        </a>
+    </div>
+</div>

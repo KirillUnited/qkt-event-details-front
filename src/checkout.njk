@@ -1,0 +1,57 @@
+---
+layout: 'sidebar.njk'
+title: 'Checkout'
+pageName: 'Checkout'
+---
+{% from "./_includes/components/input.njk" import input, checkbox, radio %}
+{% from "./_includes/components/button.njk" import button %}
+<form id="checkout_form" class="flex flex-col gap-6" name="checkout_form" action="/">
+    <fieldset>
+        <h2 class="content-inner-title text-heading font-medium">Buyer Info</h2>
+        <div class="inline-flex flex-col gap-4 md:gap-10">
+            <p class="text-sm">Enter your email address below to receive these tickets.</p>
+            {{ input(type="email", label="Email Address", placeholder="name@email.com", id="_Email_Address") }}
+        </div>
+    </fieldset>
+    <fieldset>
+        <h2 class="content-inner-title text-heading font-medium">Payment Method</h2>
+        {% include "./_includes/components/payments/payment-methods.njk" %}
+    </fieldset>
+    <fieldset>
+        <h2 class="content-inner-title text-heading font-medium">refund Policy</h2>
+        <div class="flex flex-col gap-6 md:gap-10">
+            <div class="flex flex-col gap-2">
+                <p class="text-sm">Bookings for this event are non-refundable.<br/>
+                    Upgrade to a refundable booking for <span class="font-bold">R90.50</span></p>
+                <a href="#" class="inline-flex items-center gap-2 font-medium text-sm text-primary">
+                    <span>See More</span>
+                    <i class="icon-plus"></i>
+                </a>
+            </div>
+            <div class="flex flex-col gap-4 md:gap-6 max-w-sm">
+                <label class="form-radio form-item-outline w-full">
+                    <input type="radio" id="Edit_Registration_SocialMedia" name="Edit_Registration_SocialMedia" value=""
+                           checked="">
+                    <span class="text-sm">Yes, I would like to protect my booking</span>
+                </label>
+                <label class="form-radio form-item-outline w-full">
+                    <input type="radio" id="Edit_Registration_Word" name="Edit_Registration_SocialMedia" value="">
+                    <span class="text-sm">No, I understand my booking is non-refundable</span>
+                </label>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <h2 class="content-inner-title text-heading font-medium">Terms & Conditions</h2>
+        <div class="flex flex-col gap-4 md:gap-10">
+            <p class="text-sm max-w-md">By checking below you hereby agree to Quicket's <a href="#" class="font-bold underline">terms
+                    and
+                    conditions</a>, <a href="#" class="font-bold underline">privacy policy</a> and refund policy.</p>
+            <div class="flex flex-col gap-4 md:gap-6 max-w-sm">
+                {{ checkbox(label="I understand and agree", id="checkout_form_agree", className="form-item-outline w-full") }}
+                {{ button(type="submit",className="btn-primary w-full", text="COMPLETE ORDER", attrs="") }}
+            </div>
+        </div>
+    </fieldset>
+</form>
+{% include "./_includes/components/help.njk" %}
