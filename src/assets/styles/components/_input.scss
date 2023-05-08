@@ -186,41 +186,6 @@
         margin-top: 12px;
     }
 
-    &-item-outline {
-        --border-color: var(--color-grey);
-        --bg-color: transparent;
-        --border-radius: 8px;
-        position: relative;
-        gap: getrem(24px);
-        border-radius: var(--border-radius);
-        padding: 1em;
-
-        &:hover {
-            --bg-color: #F5FAF1;
-        }
-
-        [class*="text"] {
-            &:after {
-                display: block;
-                content: '';
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                background-color: var(--bg-color);
-                border: 1px solid var(--border-color);
-                border-radius: var(--border-radius);
-                z-index: -1;
-            }
-        }
-
-        input:checked ~ [class*="text"] {
-            --bg-color: #F5FAF1;
-            --border-color: var(--color-green);
-        }
-    }
-
     @include less-sm {
         &-radio {
             width: 100%;
@@ -228,5 +193,44 @@
             justify-content: space-between;
             padding: 8px 8px 8px 24px;
         }
+    }
+}
+
+.form-item-outline {
+    --border-color: var(--color-grey);
+    --bg-color: transparent;
+    --border-radius: 8px;
+    position: relative;
+    flex-direction: row;
+    justify-content: normal;
+    gap: getMinMax(16px, 24px);
+    border-radius: var(--border-radius);
+    padding: 1em;
+
+    &:hover {
+        --bg-color: #F5FAF1;
+    }
+
+    [class*="text"] {
+        font-size: getMinMax(12px, 14px);
+
+        &:after {
+            display: block;
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            z-index: -1;
+        }
+    }
+
+    input:checked ~ [class*="text"] {
+        --bg-color: #F5FAF1;
+        --border-color: var(--color-green);
     }
 }
