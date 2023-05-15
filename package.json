@@ -7,9 +7,9 @@
     "start": "npm-run-all -p dev:* watch:webpack",
     "build": "run-s clear build:*",
     "dev:11ty": "eleventy --serve",
-    "dev:css": "tailwindcss -i src/assets/styles/common.css -o _site/assets/styles/common.min.css --watch --postcss",
+    "dev:css": "tailwindcss -i src/assets/styles/common.css -o src/assets/styles/common.scss --watch --postcss",
     "build:11ty": "eleventy",
-    "build:css": "tailwindcss -i src/assets/styles/common.css -o _site/assets/styles/common.min.css --postcss --minify",
+    "build:css": "tailwindcss -i src/assets/styles/common.css -o src/assets/styles/common.scss --postcss --minify",
     "build:webpack": "webpack --mode production",
     "watch:webpack": "webpack --watch --mode development",
     "clear": "rimraf ./_site"

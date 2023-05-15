@@ -3,8 +3,8 @@ layout: 'sidebar.njk'
 title: 'Checkout'
 pageName: 'Checkout'
 ---
-{% from "./_includes/components/input.njk" import input, checkbox, radio %}
-{% from "./_includes/components/button.njk" import button %}
+{% from "../_includes/components/input.njk" import input, checkbox, radio %}
+{% from "../_includes/components/button.njk" import button %}
 <form id="checkout_form" class="flex flex-col gap-6" name="checkout_form" action="/">
     <fieldset>
         <h2 class="content-inner-title text-heading font-medium">Buyer Info</h2>
@@ -15,7 +15,7 @@ pageName: 'Checkout'
     </fieldset>
     <fieldset>
         <h2 class="content-inner-title text-heading font-medium">Payment Method</h2>
-        {% include "./_includes/components/payments/payment-methods.njk" %}
+        {% include "../_includes/components/payments/payment-methods.njk" %}
     </fieldset>
     <fieldset>
         <h2 class="content-inner-title text-heading font-medium">refund Policy</h2>
@@ -54,4 +54,4 @@ pageName: 'Checkout'
         </div>
     </fieldset>
 </form>
-{% include "./_includes/components/help.njk" %}
+{% include "../_includes/components/help.njk" %}
