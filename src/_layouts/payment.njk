@@ -1,0 +1,49 @@
+{% extends "./default.njk" %}
+{% block header %}
+    {{ super() }}
+    <div class="notification sticky top-[70px] sm:top-[80px] z-10 text-center text-white bg-secondary p-4">
+        You have 15:43 to checkout below.
+        <span class="hidden md:inline">We do this in order to give
+            everyone a chance to purchase tickets for this event.</span>
+    </div>
+{% endblock %}
+{% block content %}
+    <section class="section payment-dialog">
+        <div class="container xl:max-w-6xl">
+            <div class="payment-header">
+                {% block payment_header %}
+                    <h1 class="text-2xl font-medium capitalize flex items-center gap-2">
+                        <i class="icon-lock-outline text-disabled">{# TODO: add icon to icomoon #}</i>
+                        <span>{{ title }}</span>
+                    </h1>
+                {% endblock %}
+            </div>
+            <div class="payment-body md:grid grid-cols-details gap-10">
+                <div class="content-wrap pt-5 pb-10">
+                    {{ content | safe }}
+                </div>
+                {% block payment_sidebar %}
+                    <aside class="sidebar py-10">
+                        <div class="sticky top-48">
+                            <div class="card">
+                                <p class="text-heading text-2xl font-medium">
+                                    Order Summary
+                                </p>
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        {% include "../_includes/components/order/order-sum.njk" %}
+                                    </div>
+                                    <div class="card-footer flex flex-col gap-6">
+                                        {% include "../_includes/components/order/order-total.njk" %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                {% endblock %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% block footer %}
+{% endblock %}
