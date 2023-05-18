@@ -1,3 +1,9 @@
+@mixin more-md($max: map-get($grid-breakpoints, "md")) {
+    @media (min-width: ($max + 1px)) {
+        @content;
+    }
+}
+
 @mixin less-md($max: map-get($grid-breakpoints, "md")) {
     @media (max-width: $max) {
         @content;
