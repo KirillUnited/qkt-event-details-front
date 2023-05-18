@@ -1,11 +1,7 @@
 {% extends "./default.njk" %}
 {% block header %}
     {{ super() }}
-    <div class="notification sticky top-[70px] sm:top-[80px] z-10 text-center text-white bg-primary {{ 'bg-secondary' if pageName === 'Checkout' }} p-4">
-        You have 15:43 to checkout below.
-        <span class="hidden md:inline">We do this in order to give
-            everyone a chance to purchase tickets for this event.</span>
-    </div>
+    {% include "../_includes/components/notification.njk" %}
 {% endblock %}
 {% block content %}
     <section class="section">

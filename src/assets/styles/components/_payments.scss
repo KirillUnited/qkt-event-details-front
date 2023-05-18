@@ -25,3 +25,101 @@
         }
     }
 }
+
+.payment {
+    &-dialog {
+        padding-top: getrem(40px);
+        padding-bottom: getrem(40px);
+    }
+
+    &-header {
+        padding-top: getMinMax(40px, 40px);
+        padding-bottom: getMinMax(24px, 40px);
+
+        &-title {
+            font-weight: 500;
+            font-size: getMinMax(16px, 24px);
+            text-transform: capitalize;
+        }
+    }
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+        background: #FFFFFF;
+
+        &-header {
+            background: #3978BD;
+            border-radius: 8px 8px 0 0;
+            padding: getrem(8px) getrem(24px);
+        }
+
+        &-body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1 1 0%;
+            border-radius: 0px 0px 9px 9px;
+            border: 1px solid var(--color-grey);
+            padding: getrem(24px);
+
+            .text-heading {
+                font-size: getMinMax(20px, 24px);
+            }
+        }
+    }
+
+    @include more-md() {
+        &-order {
+            min-height: getrem(528px);
+
+            &-body {
+                max-height: getrem(298px);
+                overflow-y: auto;
+            }
+        }
+    }
+
+    @include less-md() {
+        &-dialog {
+            padding-top: 0;
+        }
+        &-order {
+            &.card {
+                --bg-color: #F9F9F9;
+                padding-top: getrem(24px);
+                padding-bottom: getrem(24px);
+                border-radius: 8px;
+            }
+
+            .order-list-title {
+                .text-disabled {
+                    display: none;
+                }
+            }
+
+            .order-sum {
+                & > .text-heading {
+                    display: none;
+                }
+            }
+
+            .card-footer {
+                padding-top: getrem(24px);
+            }
+
+            .order-total {
+                color: var(--color-disabled);
+
+                .text-heading {
+                    display: none;
+                }
+            }
+
+            & > .text-heading {
+                border-bottom: 1px solid var(--border-color, #E7E7EE);
+            }
+        }
+    }
+}

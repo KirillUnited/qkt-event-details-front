@@ -1,0 +1,55 @@
+{% extends "./default.njk" %}
+{% set body_class='bg-[#FCFCFC]' %}
+{% block header %}
+    {{ super() }}
+    {% include "../_includes/components/notification.njk" %}
+{% endblock %}
+{% block content %}
+    <section class="section payment-dialog">
+        <div class="container xl:max-w-6xl">
+            <div class="payment-header">
+                {% block payment_header %}
+                    <h1 class="payment-header-title flex items-center gap-2">
+                        <i class="icon-lock-outline text-disabled"></i>
+                        <span>{{ title }}</span>
+                    </h1>
+                {% endblock %}
+            </div>
+            <div class="payment-body flex flex-col md:grid grid-cols-details gap-10">
+                <div class="payment-content content-wrap">
+                    {{ content | safe }}
+                </div>
+                {% block payment_sidebar %}
+                    <aside class="sidebar">
+                        <div class="sticky top-48">
+                            <div class="payment-order card flex flex-col">
+                                <p class="text-heading text-2xl font-medium hidden md:block">
+                                    Order Summary
+                                </p>
+                                <div class="flex md:hidden items-center gap-2 text-heading font-medium text-xl pb-6">
+                                    <div class="flex-1">
+                                        <span>Total</span> <span class="text-sm text-disabled">(Incl. VAT)</span>
+                                    </div>
+                                    <div class="text-right basis-1/5">R3149</div>
+                                </div>
+                                <div class="card-content flex-1 flex flex-col">
+                                    <div class="payment-order-body flex-1">
+                                        <div class="card-body">
+                                            {% include "../_includes/components/order/order-sum.njk" %}
+                                        </div>
+                                    </div>
+                                    <div class="card-footer flex flex-col gap-6 mt-auto">
+                                        {% include "../_includes/components/order/order-total.njk" %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                {% endblock %}
+            </div>
+            <p class="text-sm mt-10"><a href="#" class="font-medium underline">Click here to refresh</a> if your page doesn’t load automatically.</p>
+        </div>
+    </section>
+{% endblock %}
+{% block footer %}
+{% endblock %}
