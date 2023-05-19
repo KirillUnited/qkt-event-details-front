@@ -1,0 +1,79 @@
+---
+layout: 'order-complete.njk'
+title: 'Order Complete Successfully!'
+---
+<div class="flex md:block flex-col gap-5">
+    <section>
+        <h1 class="content-inner-title text-heading font-medium flex items-center gap-2">
+            <i class="icon-done bg-primary text-white rounded-full w-5 h-5 text-sm flex items-center justify-center"></i>
+            {{ title }}
+        </h1>
+        <div class="flex flex-col gap-10">
+            <p class="text-sm">Thank you for completing your order on Quicket. You should receive a confirmation email
+                shortly
+                with your tickets
+                attached. If you do not see the email in your inbox, please try searching in your email account for
+                emails
+                sent
+                from
+                Quicket. You can also access tickets from your Quicket Account that was automatically created for
+                you.</p>
+            <div class="flex gap-2">
+                <a href="#" class="btn btn-outline w-full max-w-[188px]" style="--min-width: auto;">MANAGE BOOKING</a>
+                <a href="#" class="btn btn-primary w-full max-w-[188px]" style="--min-width: auto;">VIEW TICKETS NOW</a>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h2 class="content-inner-title text-heading font-medium">Add Tickets to your eWallet</h2>
+        <div class="flex flex-col gap-10">
+            <p class="text-sm">Add a digital version of your tickets to your eWallets. Select your
+                preference below.</p>
+            <div class="flex items-center flex-wrap gap-2">
+                <a href="#" data-toggle="modal" data-target="Add_Tickets_to_your_eWallet">
+                    <img src="/assets/images/wallet-1.png" alt="Wallet">
+                </a>
+                <a href="#" data-toggle="modal" data-target="Add_Tickets_to_your_eWallet">
+                    <img src="/assets/images/wallet-2.png" alt="Wallet">
+                </a>
+            </div>
+            <ul class="payment-methods-list">
+                <li class="payment-methods-card">
+                    <img src="/assets/images/wallet-2-google.png" alt="Wallet">
+                    <a href="#" class="flex items-end gap-2 font-medium text-sm text-primary">
+                        <span>ADD</span>
+                        <i class="icon-plus text-base"></i>
+                    </a>
+                </li>
+                <li class="payment-methods-card">
+                    <img src="/assets/images/wallet-1.png" alt="Wallet">
+                    <a href="#" class="flex items-end gap-2 font-medium text-sm text-primary">
+                        <span>ADD</span>
+                        <i class="icon-plus text-base"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <div class="block md:hidden">
+        {% include "../_includes/components/sidebar.njk" %}
+    </div>
+    <section>
+        <h2 class="content-inner-title text-heading font-medium">Planning an Event?</h2>
+        <div class="flex flex-col gap-10">
+            <div class="flex flex-wrap gap-4">
+                {% for item in [1,2,3,4,5] %}
+                    <div class="avatar">
+                        <img class="object-cover object-center w-10 h-10" src="/assets/images/avatar-{{ item }}.png"
+                             alt="Avatar" width="40" height="40">
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="flex flex-col gap-4">
+                <p class="text-sm">Thousands of people have used Quicket to sell tickets. So can you!</p>
+                <a href="#" class="btn btn-outline self-start w-full max-w-[188px]" style="--min-width: auto;">FIND OUT
+                    HOW</a>
+            </div>
+        </div>
+    </section>
+</div>

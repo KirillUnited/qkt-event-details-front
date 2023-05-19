@@ -1,0 +1,26 @@
+<aside class="sidebar">
+    <p class="sidebar-title content-inner-title text-heading font-medium">When & Where</p>
+    <ul class="flex flex-col gap-6">
+        {% for item in ["AfrikaBurn 2023 - S P A C E","Rocking The Daisies 2023"] %}
+            <li class="flex flex-col gap-4">
+                <h2 class="text-heading font-medium">{{ item }}</h2>
+                <ul class="text-sm">
+                    <li>
+                        <span class="font-medium">Event:</span> <span>Afrika Burn - S P A C E</span>
+                    </li>
+                    <li>
+                        <span class="font-medium">Starts:</span> <span>19th November 2022</span>
+                    </li>
+                    <li>
+                        <span class="font-medium">Ends:</span> <span>21st November 2022</span>
+                    </li>
+                </ul>
+                <a href="#" class="flex gap-2 items-center">
+                    <i class="icon-Calendar"></i>
+                    <span class="text-sm underline">Add To Calendar</span>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    {% include "./help.njk" %}
+</aside>

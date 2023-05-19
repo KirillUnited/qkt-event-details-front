@@ -24,6 +24,25 @@
             }
         }
     }
+
+    &-card {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        justify-content: space-between;
+        gap: getrem(8px);
+        background-color: #FFFFFF;
+        border: 1px solid var(--color-grey);
+        padding: getrem(24px);
+
+        &:first-child {
+            border-radius: 8px 8px 0 0;
+        }
+
+        &:last-child {
+            border-radius: 0 0 8px 8px;
+        }
+    }
 }
 
 .payment {
@@ -41,6 +60,10 @@
             font-size: getMinMax(16px, 24px);
             text-transform: capitalize;
         }
+    }
+
+    &-body {
+        grid-template-columns: 1fr 528px;
     }
 
     &-content {

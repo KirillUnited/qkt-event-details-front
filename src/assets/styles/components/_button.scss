@@ -43,6 +43,10 @@ a.btn,
         }
     }
 
+    &-outline {
+        border: 1px solid var(--border-color-outline, var(--color-grey));
+    }
+
     &[disabled] {
         --color: #F8FAFC;
         --bg-color: var(--color-disabled);
