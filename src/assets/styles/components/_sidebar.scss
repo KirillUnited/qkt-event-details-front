@@ -1,0 +1,6 @@
+.sidebar {
+    &-title {
+        font-size: getMinMax(16px, 20px);
+        margin-bottom: getrem(24px);
+    }
+}

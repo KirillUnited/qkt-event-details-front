@@ -1,0 +1,23 @@
+{% extends "./default.njk" %}
+{% set body_class='bg-[#FCFCFC]' %}
+{% block header %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+    <section class="section pt-2 pb-10">
+        <div class="container xl:max-w-6xl">
+            <div class="md:grid grid-cols-details gap-10">
+                <div class="content-wrap">
+                    <h1 class="content-inner-title text-heading font-medium flex items-center gap-2">
+                        <i class="icon-done bg-primary text-white rounded-full w-5 h-5 text-sm flex items-center justify-center"></i>
+                        {{ title }}
+                    </h1>
+                    {{ content | safe }}
+                </div>
+                {% include "../_includes/components/sidebar.njk" %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% block footer %}
+{% endblock %}
