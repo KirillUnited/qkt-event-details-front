@@ -663,10 +663,6 @@ body {
   bottom: 0px;
 }
 
-.left-0 {
-  left: 0px;
-}
-
 .right-0 {
   right: 0px;
 }
@@ -1080,8 +1076,8 @@ body {
   padding-bottom: 1.5rem;
 }
 
-.pb-8 {
-  padding-bottom: 2rem;
+.pb-\[140px\] {
+  padding-bottom: 140px;
 }
 
 .pt-10 {
@@ -1102,10 +1098,6 @@ body {
 
 .pt-6 {
   padding-top: 1.5rem;
-}
-
-.pb-\[140px\] {
-  padding-bottom: 140px;
 }
 
 .text-center {
