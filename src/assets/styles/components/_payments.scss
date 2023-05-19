@@ -43,6 +43,10 @@
         }
     }
 
+    &-body {
+        grid-template-columns: 1fr 528px;
+    }
+
     &-content {
         display: flex;
         flex-direction: column;
