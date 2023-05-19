@@ -1,0 +1,41 @@
+{% from "../button.njk" import button %}
+<div class="modal flex justify-center items-center md:px-4" data-modal="Add_Tickets_to_your_eWallet" data-close="true">
+    <div class="modal-dialog flex flex-col w-full max-w-[720px]">
+        <span class="modal-close" data-close="true">
+            <i class="icon-close"></i>
+        </span>
+        <div class="px-9 pt-10 pb-3">
+            <h2 class="text-heading text-xl font-medium capitalize">Add tickets to Google Wallet</h2>
+        </div>
+        <div class="pb-10 px-9">
+            <table class="table-auto card-content">
+                <thead>
+                <tr>
+                    <th>
+                        <div class="py-6">Ticket#</div>
+                    </th>
+                    <th width="66%" align="left">
+                        <div class="py-6 px-5">Name</div>
+                    </th>
+                    <th width="33%"></th>
+                </tr>
+                </thead>
+                <tbody class="card-content">
+                {% for item in [1,2] %}
+                    <tr>
+                        <td>
+                            <div class="py-6">#{{ item }}</div>
+                        </td>
+                        <td>
+                            <div class="py-6 px-5">Lucy Kennedy</div>
+                        </td>
+                        <td>
+                            <div class="py-6">{{ button(type="button",className="btn-primary w-full", text="ADD TICKET", attrs="style=--min-width:auto;") }}</div>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
