@@ -646,6 +646,10 @@ body {
   visibility: hidden;
 }
 
+.fixed {
+  position: fixed;
+}
+
 .absolute {
   position: absolute;
 }
@@ -1231,6 +1235,10 @@ body {
 
   .md\:relative {
     position: relative;
+  }
+
+  .md\:z-0 {
+    z-index: 0;
   }
 
   .md\:mb-8 {
