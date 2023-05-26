@@ -1104,6 +1104,10 @@ body {
   padding-top: 1.5rem;
 }
 
+.pb-16 {
+  padding-bottom: 4rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -1305,6 +1309,14 @@ body {
 
   .md\:pt-16 {
     padding-top: 4rem;
+  }
+
+  .md\:pb-0 {
+    padding-bottom: 0px;
+  }
+
+  .md\:pb-16 {
+    padding-bottom: 4rem;
   }
 
   .md\:text-2xl {

@@ -1,0 +1,17 @@
+<ul class="footer-contacts list-style-reset">
+    <li class="flex items-center">
+        <a href="tel:{{ contacts.tel }}" class="inline-flex gap-2 items-center max-w-full">
+            {% include "../icons/call.njk" %}
+            <span class="truncate">{{ contacts.tel }}</span>
+        </a>
+    </li>
+    <li class="flex items-center">
+        <a href="mailto:{{ contacts.email }}" class="inline-flex gap-2 items-center max-w-full">
+            {% include "../icons/email.njk" %}
+            <span class="truncate">{{ contacts.email }}</span>
+        </a>
+    </li>
+    <li>
+        © Copyright 2023 Quicket
+    </li>
+</ul>
