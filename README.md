@@ -1,6 +1,6 @@
 > AfrikaBurn 2023 - S P A C E | Event Details
 ## 🚀 [Live preview](https://afrika-burn-2023.netlify.app/)
-## ⚙️Technologies used
+## ⚙️ Technologies used
 - 🛠️ <a href="https://www.11ty.dev/" rel="nofollow">Eleventy</a> to transform all of the directories with a leading `_`, and will copy across any `images` and `fonts`. Run server.
 Eleventy’s output will be to a `_site` directory at the root level.
 - 🧩 <a href="http://mozilla.github.io/nunjucks/templating.html" rel="nofollow">Nunjucks</a> as the templating language
