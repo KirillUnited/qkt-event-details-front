@@ -1,5 +1,6 @@
 > AfrikaBurn 2023 - S P A C E | Event Details
-## <a href="https://glowing-kangaroo-eecc5d.netlify.app/" rel="nofollow" target="_blank">Live demo link</a>
+## [Live preview](https://afrika-burn-2023.netlify.app/)
+
 ## Getting started
 1. Clone this repo: `git clone https://github.com/KirillUnited/qkt-event-details-front.git`
 2. `cd` into the project directory and run `npm install`
